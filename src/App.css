@@ -21,8 +21,14 @@
 .App-intro {
   font-size: large;
 }
+body {
+  background-color: #0967f5;
+  text-align: center;
+  color: #fff;
+  padding-top: 10em;
+}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+* {
+  color: #fff;
+  text-decoration: none;
 }
