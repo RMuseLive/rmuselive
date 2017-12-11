@@ -14,15 +14,12 @@ class App extends Component {
             href=""
             className="typewrite"
             data-period="2000"
-            data-type="[ &quot;Hi, Im shubham.&quot;, &quot;I am Creative.&quot;, &quot;I Love Design.&quot;, &quot;I Love to Develop.&quot; ]"
+            data-type="[ &quot;Hi, Im an Artist.&quot;, &quot;I am Creative.&quot;, &quot;I Love Design.&quot;, &quot;I Love to Develop.&quot;]"
           >
             <span className="wrap" />
           </a>
         </h1>
 
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <Footer className="App-footer" />
       </div>
     );
