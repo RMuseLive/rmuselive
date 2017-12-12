@@ -1,34 +1,23 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: rgb(7, 7, 7);
+}
+.App-footer {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: rgb(7, 7, 7);
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
 body {
-  background-color: #0967f5;
+  background-color: #7aa5e6;
   text-align: center;
-  color: #fff;
+  color: rgb(253, 251, 251);
   padding-top: 10em;
 }
-
 * {
-  color: #fff;
+  color: rgb(17, 17, 17);
   text-decoration: none;
 }
