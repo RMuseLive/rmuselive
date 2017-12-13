@@ -1,107 +1,24 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
-//import Banner from "./component/Home/Banner";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/Home";
+import User from "./components/User";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>
-          <a
-            href=""
-            className="typewrite"
-            data-period="2000"
-            data-type="[ &quot;Hi, Im an Artist.&quot;, &quot;I am Creative.&quot;, &quot;I Love Design.&quot;, &quot;I Love to Develop.&quot;]"
-          >
-            <span className="wrap" />
-          </a>
-        </h1>
+      <div>
         <Header className="App-header" />
-
-        <div>
-          <form>
-            <label>
-              <input
-                type="text"
-                name="name"
-                placeholder="searh artist name or art"
-              />
-            </label>
-            <button
-              id="search-btn"
-              type="button"
-              className="btn btn-submit btn-sm"
-            >
-              Go
-            </button>
-          </form>
-        </div>
-        <div>
-          <h2>Trending Now</h2>
-          <Grid>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-            </Row>
-            <h2>Join Now</h2>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p>Picture</p>
-              </Col>
-            </Row>
-          </Grid>
-        </div>
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/User" component={User}/>
+            </Switch>
+          </div>
+        </Router>
         <Footer className="App-footer" />
       </div>
     );
