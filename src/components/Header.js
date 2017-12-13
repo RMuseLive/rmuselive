@@ -65,7 +65,7 @@ class YourReactClass extends React.Component {
   render() {
     return (
       // Passing in text.
-      <TypeWriter typing={1}>Hello World!</TypeWriter>
+      <TypeWriter typing={1}>Hello World</TypeWriter>
     );
   }
 }

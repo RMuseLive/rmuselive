@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-
+import { Grid, Row, Col } from "react-bootstrap";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
+//import Banner from "./component/Home/Banner";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header className="App-header" />
         <h1>
           <a
             href=""
@@ -19,7 +20,88 @@ class App extends Component {
             <span className="wrap" />
           </a>
         </h1>
+        <Header className="App-header" />
 
+        <div>
+          <form>
+            <label>
+              <input
+                type="text"
+                name="name"
+                placeholder="searh artist name or art"
+              />
+            </label>
+            <button
+              id="search-btn"
+              type="button"
+              className="btn btn-submit btn-sm"
+            >
+              Go
+            </button>
+          </form>
+        </div>
+        <div>
+          <h2>Trending Now</h2>
+          <Grid>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+            <h2>Join Now</h2>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+          </Grid>
+        </div>
         <Footer className="App-footer" />
       </div>
     );
