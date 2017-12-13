@@ -25,7 +25,6 @@ class App extends Component {
         <div>
           <form>
             <label>
-              Search:
               <input
                 type="text"
                 name="name"
@@ -42,6 +41,7 @@ class App extends Component {
           </form>
         </div>
         <div>
+          <h2>Trending Now</h2>
           <Grid>
             <Row>
               <Col sm={4}>
@@ -85,6 +85,7 @@ class App extends Component {
                 <p>Picture</p>
               </Col>
             </Row>
+            <h2>Join Now</h2>
             <Row>
               <Col sm={4}>
                 {/* <img /> */}
