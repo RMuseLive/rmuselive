@@ -20,7 +20,7 @@ class Footer extends Component {
             <Col sm={4}>
               <p>
                 <a href="#!">CONTACT US</a>
-              </p>
+                </p>
               <p>
                 <a href="#!">ABOUT US</a>
               </p>
