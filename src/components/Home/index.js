@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Row from "react-bootstrap";
-import Banner from "./Banner";
+import { Grid, Row, Col } from "react-bootstrap";
+
+// import Banner from "./Banner";
 
 /*Trending title goes at top of page. Different categories of trending artists. Such as Photography, Filmagraphy, Music, vidoes, etc.
  columns of three or four.
@@ -12,7 +13,99 @@ class Home extends Component {
   render() {
     return (
       //Insert columns here.
-      <div />
+      <div className="App">
+        <h1>
+          <a
+            href=""
+            className="typewrite"
+            data-period="2000"
+            data-type="[ &quot;Hi, Im an Artist.&quot;, &quot;I am Creative.&quot;, &quot;I Love Design.&quot;, &quot;I Love to Develop.&quot;]"
+          >
+            <span className="wrap" />
+          </a>
+        </h1>
+
+        <div>
+          <form>
+            <label>
+              <input
+                type="text"
+                name="name"
+                placeholder="searh artist name or art"
+              />
+            </label>
+            <button
+              id="search-btn"
+              type="button"
+              className="btn btn-submit btn-sm"
+            >
+              Go
+            </button>
+          </form>
+        </div>
+        <div>
+          <h2>Trending Now</h2>
+          <Grid>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+            <h2>Join Now</h2>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+          </Grid>
+        </div>
+      </div>
     );
   }
   /*3 step sign up process goes somewhere down here.
@@ -22,3 +115,4 @@ class Home extends Component {
       Two buttons one says Join Now the other says Explore.
       */
 }
+export default Home;
