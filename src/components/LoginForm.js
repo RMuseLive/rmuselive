@@ -3,8 +3,11 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import validateInput from ".../../server/shared/validations/login";
 import { connect } from "react-redux";
 import { login } from "../../actions/authActions.js";
+import Header from "./components/Header";
 
-class LoginForm extends React.Component {
+class LoginForm extends Component {
+    render() {
+        return(
     constructor(props) {
         super(props);
         this.state = {
@@ -17,8 +20,11 @@ class LoginForm extends React.Component {
     }
     isValid() {
        const { errors, isValid } = validateInput(this.state);
-    }
-
-  return isValid;
-});
+    
 }
+return isValid();
+} 
+);
+}
+
+export default LoginForm;

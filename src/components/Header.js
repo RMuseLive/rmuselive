@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import TypeWriter from "react-typewriter";
+//import { Link } from "react-router-dom";
+//import TypeWriter from "react-typewriter";
 
 var TxtType = function(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -61,14 +61,6 @@ window.onload = function() {
   document.body.appendChild(css);
 };
 
-class YourReactClass extends React.Component {
-  render() {
-    return (
-      // Passing in text.
-      <TypeWriter typing={1}>Hello World</TypeWriter>
-    );
-  }
-}
 class Header extends Component {
   render() {
     return (

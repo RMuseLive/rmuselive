@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Grid, Row, Col } from "react-bootstrap";
 import "react-bootstrap";
+import { NavLink, Router, Button } from "react-router-dom";
 
 class Footer extends Component {
   render() {
@@ -18,17 +18,26 @@ class Footer extends Component {
             </p>
 
             <Col sm={4}>
+              {/* <NavLink to="/about">About</NavLink> */}
               <p>
-                <a href="#!">CONTACT US</a>
-                </p>
-              <p>
-                <a href="#!">ABOUT US</a>
+                {/* <Link> */}
+                <a href="/contact">CONTACT US</a>
+                {/* </Link> */}
               </p>
               <p>
-                <a href="#!">FAQ</a>
+                {/* <Link> */}
+                <a href="/about">ABOUT US</a>
+                {/* </Link> */}
               </p>
               <p>
-                <a href="#!">SUPPORT</a>
+                {/* <Link> */}
+                <a href="/faq">FAQ</a>
+                {/* </Link> */}
+              </p>
+              <p>
+                {/* <Link> */}
+                <a href="/support">SUPPORT</a>
+                {/* </Link> */}
               </p>
             </Col>
 
@@ -49,23 +58,27 @@ class Footer extends Component {
             </Col>
 
             <Col sm={4}>
-              <div class="social-section mt-2 ">
+              <div className="social-section mt-2 ">
                 <h5 className="title mb-4 font-bold">Follow Us</h5>
-                <a type="button" className="btn-floating btn-small btn-fb">
-                  <i className="fa fa-facebook" /> Facebook
+                <a
+                  href="https://www.facebook.com/RMuse.Live/"
+                  type="button"
+                  className="btn-floating btn-small btn-fb"
+                >
+                  <i className="fa fa-facebook" aria-hidden="true" />
                 </a>
 
-                <a type="button" className="btn-floating btn-small btn-tw">
-                  <i className="fa fa-twitter" /> Twitter
+                {/* <a type="button" className="btn-floating btn-small btn-tw">
+                  <i className="fa fa-twitter" aria-hidden="true"/> 
                 </a>
 
                 <a type="button" className="btn-floating btn-small btn-gplus">
-                  <i className="fa fa-google-plus" /> Google+
+                  <i className="fa fa-google-plus" aria-hidden="true"/> 
                 </a>
 
                 <a type="button" className="btn-floating btn-small btn-ingram">
-                  <i className="fa fa-instagram" /> Instagram
-                </a>
+                  <i className="fa fa-instagram" aria-hidden="true"/> 
+                </a> */}
               </div>
             </Col>
             <Col sm={2}>
