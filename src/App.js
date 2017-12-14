@@ -9,7 +9,8 @@ import User from "./components/User";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App">
+        <navBar />
         <Header className="App-header" />
         <Router>
           <div>
