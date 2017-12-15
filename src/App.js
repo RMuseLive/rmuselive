@@ -8,6 +8,7 @@ import Home from "./components/Home";
 //import Navbar from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Support from "./components/Support";
 
 class App extends Component {
   render() {
@@ -21,6 +22,8 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               {/* <Route path="/User" component={User} /> */}
               <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/support" component={Support} />
             </Switch>
           </div>
         </Router>

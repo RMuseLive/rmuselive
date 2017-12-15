@@ -23,7 +23,7 @@ class LoginForm extends Component {
     
 }
 return isValid();
-} 
+}
 );
 }
 

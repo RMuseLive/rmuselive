@@ -49,7 +49,7 @@ class Home extends Component {
           <Grid>
             <Row>
               <Col sm={4}>
-                {/* <img /> */}
+                <img src="Music.png" />
                 <p>Picture</p>
               </Col>
               <Col sm={4}>
