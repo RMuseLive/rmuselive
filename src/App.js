@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import User from "./components/User";
+import FAQ from "./components/FAQ";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/User" component={User}/>
+              <Route path="/FAQ" component={FAQ}/>
             </Switch>
           </div>
         </Router>
