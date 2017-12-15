@@ -1,0 +1,14 @@
+.main {
+    width: 400px;
+  }
+  .row {
+    overflow: hidden;
+  }
+  .column {
+    width: 136px;
+    float: left;
+  }
+  img {
+    display: block;
+    float: left;
+  }

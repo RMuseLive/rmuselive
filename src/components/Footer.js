@@ -25,7 +25,7 @@ class Footer extends Component {
                 <a href="#!">ABOUT US</a>
               </p>
               <p>
-                <a href="#!">FAQ</a>
+                <a href="/FAQ">FAQ</a>
               </p>
               <p>
                 <a href="#!">SUPPORT</a>
