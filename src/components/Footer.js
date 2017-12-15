@@ -31,9 +31,13 @@ class Footer extends Component {
                 {/* </Link> */}
               </p>
               <p>
+<<<<<<< HEAD
                 {/* <Link> */}
                 <a href="/faq">FAQ</a>
                 {/* </Link> */}
+=======
+                <a href="/faq">FAQ</a>
+>>>>>>> 91f14ffb8e5340e60df94ee33efafdaf5def8aeb
               </p>
               <p>
                 {/* <Link> */}
