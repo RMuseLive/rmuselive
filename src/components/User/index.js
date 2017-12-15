@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { Grid, Row, Col } from "react-bootstrap";
-
+import Header from "../Header"
 class User extends Component {
   render() {
     return (
@@ -13,7 +14,7 @@ class User extends Component {
               <input
                 type="text"
                 name="name"
-                placeholder="searh artist name or art"
+                placeholder="search artist name or art"
               />
             </label>
             <button

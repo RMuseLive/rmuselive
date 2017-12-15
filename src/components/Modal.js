@@ -1,51 +1,56 @@
+import {
+  Modal,
+  ModalHeader,
+  ModalTitle,
+  ModalClose,
+  ModalBody,
+  ModalFooter
+} from "react-modal-bootstrap";
+import { Button } from "react-bootstrap";
 import React from "react";
-import ReactDOM from "react-dom";
+import LoginForm from "./LoginForm";
 
-const display = {
-  display: "block"
-};
-const hide = {
-  display: "none"
-};
-class Modal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
+class MyModal extends React.Component {
+  state = {
+    isOpen: false
+  };
 
-    this.state = {
-      toggle: false
-    };
-  }
+  openModal = () => {
+    this.setState({
+      isOpen: true
+    });
+  };
 
-  toggle(event) {
-    this.setState(prevState => ({
-      toggle: !prevState.toggle
-    }));
-  }
+  hideModal = () => {
+    this.setState({
+      isOpen: false
+    });
+  };
+
   render() {
-    var modal = [];
-
-    modal.push(
-      <div className="modal" style={this.state.toggle ? display : hide}>
-        <div className="modal-content">
-          <h4>Sign Up</h4>
-          <p>Text</p>
-        </div>
-        <div className="modal-footer">
-          <a className="btn" onClick={this.toggle}>
-            Agree
-          </a>
-        </div>
-      </div>
-    );
     return (
       <div>
-        <a className="btn" onClick={this.toggle}>
-          Modal
-        </a>
-        {modal}
+        <Modal isOpen={this.state.isOpen} onRequestHide={this.hideModal}>
+          <ModalHeader>
+            <ModalClose onClick={this.hideModal} />
+            <ModalTitle>Modal title</ModalTitle>
+          </ModalHeader>
+          <ModalBody>
+            <LoginForm />
+            <h1>PUT YOUR FORM HERE</h1>
+          </ModalBody>
+          <ModalFooter>
+            <button className="btn btn-default" onClick={this.hideModal}>
+              Close
+            </button>
+            <button className="btn btn-primary">Save changes</button>
+          </ModalFooter>
+        </Modal>
+        <Button onClick={() => this.setState({ isOpen: true })}>
+          OPEN Modal
+        </Button>
       </div>
     );
   }
 }
-ReactDom.render(<Modal />, document.getElementById(root));
+export default MyModal;

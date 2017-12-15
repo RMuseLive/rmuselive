@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
-//import TypeWriter from "react-typewriter";
+import { connect } from "react-redux";
+import MyModal from "./Modal";
 
 var TxtType = function(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -65,17 +65,46 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <div className="container" />
-        {/* <navbar> */}
-        <nav className="nav navbar-light">
-          {/* <nav className="Header_links"> */}
-          <li className="Header_link">Home</li>
-          <li className="Header_link">Login</li>
-          <li className="Header_link">Sign Up</li>
-          {/* </nav> */}
-        </nav>
-        {/* </navbar> */}
+        <header navbar={this.props.header}>
+        <navbar modal={this.props.modal}>
+          {this.props.children}
+        <div className="navbar" />
+          <nav className="navbar navbar-inverse">
+          <div className="container-fluid">
+          <div className="navbar-header">
+          <a className="navbar-brand"> Welcome </a>
+        </div>
+        <ul className="nav navbar-nav">
+          <li className="active navMovies">
+            <a href="#movies">login</a>
+          </li>
+          <li className="navSurprise">
+            <a href="#surprise">signup</a>
+          </li>
+          <li className="navSurprise">
+            <MyModal />
+          </li>
+        </ul>
       </div>
+        </nav>
+        </navbar>
+        </header>
+
+            {/* <navbar> */}
+         {/* <nav className="nav navbar-light"> */}
+          {/* <nav className="Header_links"> */}
+          {/* <li className="Header_link">Home</li> */}
+          {/* <li className="Header_link">Login</li> */}
+          {/* <li className="Header_link">Sign Up</li> */}
+          {/* </nav> */}
+
+
+        {/* </nav> */}
+        {/* </navbar> */}
+      
+      </div>
+    
+
     );
   }
 }
