@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import TypeWriter from "react-typewriter";
 import MyModal from "./Modal";
 
 var TxtType = function(el, toRotate, period) {
@@ -63,22 +61,7 @@ window.onload = function() {
   document.body.appendChild(css);
 };
 
-//class YourReactClass extends React.Component {
-  //render() {
-    //return (
-      // Passing in text.
-      //<TypeWriter typing={1}>Hello World</TypeWriter>
-    //);
- // }
-//}
-// class Header extends Component {
-  // render() {
-    // return <p>{this.props.children}</p>
-  // this.props.children={Modal};
-  // )
-
-// }
- class Header extends React.Component {
+class Header extends Component {
   render() {
     return (
       <div>
