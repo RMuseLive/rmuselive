@@ -32,7 +32,7 @@ class Home extends Component {
               <input
                 type="text"
                 name="name"
-                placeholder="searh artist name or art"
+                placeholder="search artist name or art"
               />
             </label>
             <button

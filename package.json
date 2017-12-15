@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "connect": "^3.6.5",
+    "dev-tools": "^0.1.6",
+    "from": "^0.1.7",
     "link": "^0.1.5",
-    "react": "^16.2.0",
+    "react": "^0.14.9",
     "react-bootstrap": "^0.31.5",
-    "react-dom": "^16.2.0",
+    "react-dom": "^0.14.9",
     "react-grid-system": "^3.1.0",
+    "react-modal-bootstrap": "^1.1.1",
+    "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "react-typewriter": "^0.4.1"
+    "react-typewriter": "^0.4.1",
+    "redux": "^3.7.2",
+    "theme-provider": "^1.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
