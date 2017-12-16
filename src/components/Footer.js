@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
-
+import { SocialIcon } from "react-social-icons";
 import { NavLink, Router, Button } from "react-router-dom";
 
 class Footer extends Component {
@@ -61,13 +61,16 @@ class Footer extends Component {
             <Col sm={3}>
               <div className="social-section mt-2 ">
                 <h5 className="title mb-4 font-bold">Follow Us</h5>
-                <a
+                <SocialIcon url="https://www.facebook.com/RMuse.Live/" />
+                <SocialIcon url="https://twitter.com/RMUSE_Live?edit=true" />
+                <SocialIcon url="https://www.instagram.com/rmuse.live/?hl=en" />
+                {/* <a
                   href="https://www.facebook.com/RMuse.Live/"
                   type="button"
                   className="btn-floating btn-small btn-fb"
                 >
                   <i className="fa fa-facebook" aria-hidden="true" />facebook
-                </a>
+                </a> */}
 
                 {/* <a type="button" className="btn-floating btn-small btn-tw">
                   <i className="fa fa-twitter" aria-hidden="true"/> 
