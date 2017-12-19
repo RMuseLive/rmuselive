@@ -5,8 +5,8 @@
   color: rgb(7, 7, 7);
 }
 .App-footer {
-  background-color: rgb(48, 47, 47);
-  height: 150px;
+  background-color: rgb(163, 159, 159);
+  height: 255px;
   padding: 20px;
   color: rgb(2, 2, 2);
 }
@@ -16,4 +16,9 @@ body {
   text-align: center;
   color: rgb(99, 87, 87);
   padding-top: 10em;
+}
+.search {
+  position: relative;
+  left: 1250px;
+  margin-top: -170px;
 }

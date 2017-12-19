@@ -64,7 +64,7 @@ window.onload = function() {
 class Header extends Component {
   render() {
     return (
-      <div>
+      <div className="App-header">
         <header navbar={this.props.header}>
         <navbar modal={this.props.modal}>
           {this.props.children}

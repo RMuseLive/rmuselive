@@ -6,39 +6,31 @@ import { NavLink, Router, Button } from "react-router-dom";
 class Footer extends Component {
   render() {
     return (
-      <div>
+      <div className="App-footer">
         <Grid>
           <Row>
             <Col sm={3}>
-              <hr className="clearfix w-100 d-md-none" />
+             
               <h5 className="title mb-4 font-bold">WHO WE ARE</h5>
               <p>
                 Here you can use rows and columns here to organize your footer
                 content.
               </p>
             </Col>
-            <hr className="clearfix w-100 d-md-none" />
+           
             <Col sm={3}>
-              {/* <NavLink to="/about">About</NavLink> */}
+              
               <p>
-                {/* <Link> */}
                 <a href="/contact">CONTACT US</a>
-                {/* </Link> */}
-              </p>
+                 </p>
               <p>
-                {/* <Link> */}
-                <a href="/about">ABOUT US</a>
-                {/* </Link> */}
+                <a href="/about">ABOUT US</a> 
               </p>
-              <p>
-                {/* <Link> */}
+              <p> 
                 <a href="/faq">FAQ</a>
-                {/* </Link> */}
               </p>
               <p>
-                {/* <Link> */}
-                <a href="/support">SUPPORT</a>
-                {/* </Link> */}
+                <a href="/support">SUPPORT</a> 
               </p>
             </Col>
 
@@ -64,25 +56,7 @@ class Footer extends Component {
                 <SocialIcon url="https://www.facebook.com/RMuse.Live/" />
                 <SocialIcon url="https://twitter.com/RMUSE_Live?edit=true" />
                 <SocialIcon url="https://www.instagram.com/rmuse.live/?hl=en" />
-                {/* <a
-                  href="https://www.facebook.com/RMuse.Live/"
-                  type="button"
-                  className="btn-floating btn-small btn-fb"
-                >
-                  <i className="fa fa-facebook" aria-hidden="true" />facebook
-                </a> */}
-
-                {/* <a type="button" className="btn-floating btn-small btn-tw">
-                  <i className="fa fa-twitter" aria-hidden="true"/> 
-                </a>
-
-                <a type="button" className="btn-floating btn-small btn-gplus">
-                  <i className="fa fa-google-plus" aria-hidden="true"/> 
-                </a>
-
-                <a type="button" className="btn-floating btn-small btn-ingram">
-                  <i className="fa fa-instagram" aria-hidden="true"/> 
-                </a> */}
+              
               </div>
             </Col>
 
