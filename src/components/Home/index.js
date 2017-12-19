@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 // import User from "./components/User";
 
-// import Banner from "./Banner";
+//import Banner from "./components/Home/Banner";
 
 /*Trending title goes at top of page. Different categories of trending artists. Such as Photography, Filmagraphy, Music, vidoes, etc.
  columns of three or four.
@@ -45,7 +45,7 @@ class Home extends Component {
           </form>
         </div>
         <div>
-          <h2>Trending Now</h2>
+          <h2>What's New</h2>
           <Grid>
             <Row>
               <Col sm={4}>
@@ -89,8 +89,47 @@ class Home extends Component {
                 <p>Picture</p>
               </Col>
             </Row>
-            <h2>Join Now</h2>
+            <h2>Most Popular</h2>
             <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+            </Row>
+            <h2>Trending Now</h2>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p>Picture</p>
+              </Col>
               <Col sm={4}>
                 {/* <img /> */}
                 <p>Picture</p>
