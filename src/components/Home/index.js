@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 //import { Link } from "react-router-dom";
 import { Grid, Row, Col } from "react-bootstrap";
-// import User from "./components/User";
 
-// import Banner from "./Banner";
+
+
 
 /*Trending title goes at top of page. Different categories of trending artists. Such as Photography, Filmagraphy, Music, vidoes, etc.
  columns of three or four.
@@ -26,85 +26,160 @@ class Home extends Component {
           </a>
         </h1>
 
-        <div>
-          <form>
-            <label>
-              <input
-                type="text"
-                name="name"
-                placeholder="search artist name or art"
-              />
-            </label>
-            <button
-              id="search-btn"
-              type="button"
-              className="btn btn-submit btn-sm"
-            >
-              Go
-            </button>
-          </form>
+        <div className="col-xs-2">
+        <form className="search">
+          <div className="input-group" >
+          <label for="ex1"></label>
+        <input type="text" className="form-control" placeholder="Search artist name or art"/>
+         <div className="input-group-btn">
+            <button className="btn btn-default" type="submit">
+        <i className="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+        </div>
+</form>
         </div>
         <div>
-          <h2>Trending Now</h2>
-          <Grid>
+        
+          <Grid><h2 className="text-left">What's New</h2>
             <Row>
               <Col sm={4}>
-                <img src="Music.png" />
-                <p>Picture</p>
+                {/* <img src="IMG/Music.png" className="img-square" alt="Music" /> */}
+                <p className="text-justify">Picture</p>
               </Col>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
             </Row>
             <Row>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
             </Row>
             <Row>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
             </Row>
-            <h2>Join Now</h2>
+            <h2 className="text-left">Most Popular</h2>
             <Row>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
               </Col>
               <Col sm={4}>
                 {/* <img /> */}
-                <p>Picture</p>
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
               </Col>
             </Row>
+            <h2 className="text-left">Trending Now</h2>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+            </Row>
+            <h2 className="text-left">Most Shared</h2>
+            <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              </Row>
           </Grid>
+          
+       
         </div>
       </div>
     );

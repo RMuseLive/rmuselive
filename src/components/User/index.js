@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+//import { Link } from "react-router-dom";
+//import { connect } from "react-redux";
 import { Grid, Row, Col } from "react-bootstrap";
-import Header from "../Header"
+
+
 class User extends Component {
   render() {
     return (
+    
       //Insert columns here.
       <div className="App">
+   
         <div>
           <form>
             <label>
@@ -17,13 +20,19 @@ class User extends Component {
                 placeholder="search artist name or art"
               />
             </label>
-            <button
-              id="search-btn"
-              type="button"
-              className="btn btn-submit btn-sm"
-            >
-              Go
-            </button>
+            <div className="col-xs-2">
+        <form className="search">
+          <div className="input-group" >
+          <label for="ex1"></label>
+        <input type="text" className="form-control" placeholder="Search artist name or art"/>
+         <div className="input-group-btn">
+            <button className="btn btn-default" type="submit">
+        <i className="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+        </div>
+</form>
+        </div>
           </form>
         </div>
         <div>
@@ -86,6 +95,7 @@ class User extends Component {
             </Row>
           </Grid>
         </div>
+      
       </div>
     );
   }

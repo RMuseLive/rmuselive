@@ -1,44 +1,35 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
+import { SocialIcon } from "react-social-icons";
 
-import { NavLink, Router, Button } from "react-router-dom";
 
 class Footer extends Component {
   render() {
     return (
-      <div>
+      <div className="App-footer">
         <Grid>
           <Row>
             <Col sm={3}>
-              <hr className="clearfix w-100 d-md-none" />
+             
               <h5 className="title mb-4 font-bold">WHO WE ARE</h5>
               <p>
-                Here you can use rows and columns here to organize your footer
-                content.
+               We are an organiztion that helps Artist of all kinds succeed.
               </p>
             </Col>
-            <hr className="clearfix w-100 d-md-none" />
+           
             <Col sm={3}>
-              {/* <NavLink to="/about">About</NavLink> */}
+              
               <p>
-                {/* <Link> */}
                 <a href="/contact">CONTACT US</a>
-                {/* </Link> */}
-              </p>
+                 </p>
               <p>
-                {/* <Link> */}
-                <a href="/about">ABOUT US</a>
-                {/* </Link> */}
+                <a href="/about">ABOUT US</a> 
               </p>
-              <p>
-                {/* <Link> */}
+              <p> 
                 <a href="/faq">FAQ</a>
-                {/* </Link> */}
               </p>
               <p>
-                {/* <Link> */}
-                <a href="/support">SUPPORT</a>
-                {/* </Link> */}
+                <a href="/support">SUPPORT</a> 
               </p>
             </Col>
 
@@ -61,25 +52,10 @@ class Footer extends Component {
             <Col sm={3}>
               <div className="social-section mt-2 ">
                 <h5 className="title mb-4 font-bold">Follow Us</h5>
-                <a
-                  href="https://www.facebook.com/RMuse.Live/"
-                  type="button"
-                  className="btn-floating btn-small btn-fb"
-                >
-                  <i className="fa fa-facebook" aria-hidden="true" />facebook
-                </a>
-
-                {/* <a type="button" className="btn-floating btn-small btn-tw">
-                  <i className="fa fa-twitter" aria-hidden="true"/> 
-                </a>
-
-                <a type="button" className="btn-floating btn-small btn-gplus">
-                  <i className="fa fa-google-plus" aria-hidden="true"/> 
-                </a>
-
-                <a type="button" className="btn-floating btn-small btn-ingram">
-                  <i className="fa fa-instagram" aria-hidden="true"/> 
-                </a> */}
+                <SocialIcon className="facbook" url="https://www.facebook.com/RMuse.Live/" />
+                <SocialIcon className="twitter" url="https://twitter.com/RMUSE_Live?edit=true" />
+                <SocialIcon className="instagram" url="https://www.instagram.com/rmuse.live/?hl=en" />
+              
               </div>
             </Col>
 
