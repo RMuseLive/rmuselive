@@ -6,7 +6,7 @@
 }
 .App-footer {
   background-color: rgb(163, 159, 159);
-  height: 300px;
+  height: 305px;
   padding: 80px;
   color: rgb(2, 2, 2);
 }
@@ -19,8 +19,8 @@ body {
 }
 .search {
   position: relative;
-  left: 1250px;
-  margin-top: -170px;
+  left: 1100px;
+  margin-top: -160px;
 }
 .social-section mt-2 {
   float: inherit;

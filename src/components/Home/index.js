@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 //import { Link } from "react-router-dom";
 import { Grid, Row, Col } from "react-bootstrap";
-// import User from "./components/User";
 
-//import Banner from "./components/Home/Banner";
+
+
 
 /*Trending title goes at top of page. Different categories of trending artists. Such as Photography, Filmagraphy, Music, vidoes, etc.
  columns of three or four.
