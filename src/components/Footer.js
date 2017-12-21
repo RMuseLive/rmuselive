@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import { SocialIcon } from "react-social-icons";
-import { NavLink, Router, Button } from "react-router-dom";
+
 
 class Footer extends Component {
   render() {
@@ -13,8 +13,7 @@ class Footer extends Component {
              
               <h5 className="title mb-4 font-bold">WHO WE ARE</h5>
               <p>
-                Here you can use rows and columns here to organize your footer
-                content.
+               We are an organiztion that helps Artist of all kinds succeed.
               </p>
             </Col>
            
@@ -53,9 +52,9 @@ class Footer extends Component {
             <Col sm={3}>
               <div className="social-section mt-2 ">
                 <h5 className="title mb-4 font-bold">Follow Us</h5>
-                <SocialIcon url="https://www.facebook.com/RMuse.Live/" />
-                <SocialIcon url="https://twitter.com/RMUSE_Live?edit=true" />
-                <SocialIcon url="https://www.instagram.com/rmuse.live/?hl=en" />
+                <SocialIcon className="facbook" url="https://www.facebook.com/RMuse.Live/" />
+                <SocialIcon className="twitter" url="https://twitter.com/RMUSE_Live?edit=true" />
+                <SocialIcon className="instagram" url="https://www.instagram.com/rmuse.live/?hl=en" />
               
               </div>
             </Col>

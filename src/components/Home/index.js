@@ -38,24 +38,6 @@ class Home extends Component {
         </div>
         </div>
 </form>
-
-
-          {/* <form>
-            <label>
-              <input
-                type="text"
-                name="name"
-                placeholder="search artist name or art"
-              />
-            </label>
-            <button
-              id="search-btn"
-              type="button"
-              className="btn btn-submit btn-sm"
-            >
-              Go
-            </button>
-          </form> */}
         </div>
         <div>
         
@@ -156,8 +138,32 @@ class Home extends Component {
                 <p className="text-justify">Picture</p>
               </Col>
             </Row>
-            <h2 className="text-left">Join Today</h2>
+            <h2 className="text-left">Most Shared</h2>
             <Row>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {/* <img /> */}
+                <p className="text-justify">Picture</p>
+              </Col>
               <Col sm={4}>
                 {/* <img /> */}
                 <p className="text-justify">Picture</p>
@@ -172,6 +178,8 @@ class Home extends Component {
               </Col>
               </Row>
           </Grid>
+          
+       
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Grid, Row, Col } from "react-bootstrap";
+//import { Link } from "react-router-dom";
+import  "react-bootstrap";
 
 class Support extends Component {
   render() {

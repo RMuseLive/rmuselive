@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+//import { Link } from "react-router-dom";
+//import { connect } from "react-redux";
 import { Grid, Row, Col } from "react-bootstrap";
 import Header from "../Header"
+
 class User extends Component {
   render() {
     return (
