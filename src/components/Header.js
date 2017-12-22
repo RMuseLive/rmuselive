@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ModalLogin from "./Modal";
-import ModalSignup from "./Modal1"
+import ModalSignup from "./Modal1
+//import { connect } from "react-redux";
+// import MyModal from "./Modal";
+
 
 var TxtType = function(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -65,7 +68,7 @@ window.onload = function() {
 class Header extends Component {
   render() {
     return (
-      <div>
+      <div className="App-header">
         <header navbar={this.props.header}>
         <navbar modal={this.props.modal}>
           {this.props.children}
