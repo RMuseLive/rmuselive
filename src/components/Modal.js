@@ -10,7 +10,10 @@ import { Button } from "react-bootstrap";
 import React from "react";
 import LoginForm from "./LoginForm";
 
-class MyModal extends React.Component {
+// import SignupSettings from"./components/User/Settings/SignupSettings";
+// import LoginSettings from "./components/User/Settings/LoginSettings";
+
+class ModalLogin extends React.Component {
   state = {
     isOpen: false
   };
@@ -33,24 +36,25 @@ class MyModal extends React.Component {
         <Modal isOpen={this.state.isOpen} onRequestHide={this.hideModal}>
           <ModalHeader>
             <ModalClose onClick={this.hideModal} />
-            <ModalTitle>Modal title</ModalTitle>
+            <ModalTitle>Welcome to RmuseLive</ModalTitle>
           </ModalHeader>
           <ModalBody>
             <LoginForm />
-            <h1>PUT YOUR FORM HERE</h1>
+            <h1>Sign In</h1>
           </ModalBody>
           <ModalFooter>
             <button className="btn btn-default" onClick={this.hideModal}>
               Close
             </button>
-            <button className="btn btn-primary">Save changes</button>
+            
           </ModalFooter>
         </Modal>
+        
         <Button onClick={() => this.setState({ isOpen: true })}>
-          OPEN Modal
-        </Button>
+        Log In
+      </Button>
       </div>
     );
   }
 }
-export default MyModal;
+export default ModalLogin;

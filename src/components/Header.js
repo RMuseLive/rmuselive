@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import MyModal from "./Modal";
+import ModalLogin from "./Modal";
+import ModalSignup from "./Modal1"
 
 var TxtType = function(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -74,18 +75,11 @@ class Header extends Component {
           <div className="navbar-header">
           <a className="navbar-brand"> Welcome </a>
         </div>
-        <ul className="nav navbar-nav">
-          <li className="active navMovies">
-            <a href="#movies">login</a>
-          </li>
-          <li className="navSurprise">
-            <a href="#surprise">signup</a>
-          </li>
-          <li className="navSurprise">
-            <MyModal />
-          </li>
-        </ul>
       </div>
+            <ModalLogin />
+            <ModalSignup />
+            
+
         </nav>
         </navbar>
         </header>

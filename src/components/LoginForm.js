@@ -3,8 +3,10 @@ import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 // import bootstrap from "react-bootstrap";
 
+// import LoginSettings from "./src/components/User/Settings";
 
-class Login extends Component {
+
+class LoginForm extends Component {
  state = {};
  handleInputonChange = event => {
    this.setState({
@@ -50,13 +52,13 @@ this.props.onSubmit(this.state.email, this.state.password);
                    onChange = {(event,newValue) => this.setState({password:newValue})}
                    />
                  <br/>
-                 <Button label="Submit" primary={true} onClick={(event) => 
-                   this.handleClick(event)}/>
+                 <Button label="Submit" primary={true} onClick= {(event) =>
+                   this.handleClick(event)} />
             
           </div>
   </div>
         );
       }
     }
-    export default Login;
+    export default LoginForm;
     
