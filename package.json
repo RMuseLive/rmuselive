@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "connect": "^3.6.5",
     "dev-tools": "^0.1.6",
     "from": "^0.1.7",
@@ -18,6 +19,8 @@
     "react-scripts": "1.0.17",
     "react-typewriter": "^0.4.1",
     "redux": "^3.7.2",
+    "redux-form": "^7.2.0",
+    "redux-thunk": "^2.2.0",
     "theme-provider": "^1.0.8"
   },
   "scripts": {
