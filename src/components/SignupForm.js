@@ -34,7 +34,7 @@ render() {
        type="password"
        floatingLabelText="Password"
        onChange = {(event, newValue) => this.setState({Username:newValue})}
-       onChange = {(event, newValue) => this.setState({password:newValue})}
+    
        />
        <br/>
        <Button label="Submit" primary={true} onClick={(event) =>

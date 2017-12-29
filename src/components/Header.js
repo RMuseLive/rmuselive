@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ModalLogin from "./Modal";
-import ModalSignup from "./Modal1
+import ModalSignup from "./Modal1";
 //import { connect } from "react-redux";
 // import MyModal from "./Modal";
 
