@@ -11,11 +11,11 @@ class LoginForm extends Component {
    email: "",
    password: "",
  };
- handleInputonChange = event => {
-   this.setState({
-     [event.target.name]: event.target.value
-   });
- };
+//  handleInputonChange = event => {
+//    this.setState({
+//      [event.target.name]: event.target.value
+//    });
+//  };
  handleOnSubmit = event => {
 event.preventDefault();
 this.props.onSubmit(this.state.email, this.state.password);
