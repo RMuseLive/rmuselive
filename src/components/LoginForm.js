@@ -4,21 +4,34 @@ import { Button } from "react-bootstrap";
 // import bootstrap from "react-bootstrap";
 
 // import LoginSettings from "./src/components/User/Settings";
-const ROOT_URL = "https://rmuse.live/api/1/login"
+const ROOT_URL = "https://rmuse.live/api/1/login";
+
+
 
 class LoginForm extends Component {
- state = {
-   email: "",
-   password: "",
+ constructor() {
+   super();
+   this.state = {
+    username: "",
+    password: "",
+
+   };
+ }
+
+   
+handleInputonChange = event => {
+this.setState({
+   [event.target.name]: event.target.value
+   });
  };
-//  handleInputonChange = event => {
-//    this.setState({
-//      [event.target.name]: event.target.value
-//    });
-//  };
- handleOnSubmit = event => {
+
+handleOnSubmit = event => {
+  fetch(ROOT_URL)
+  .then(results => {
+    return results.json();
+}).then(data => {})
 event.preventDefault();
-this.props.onSubmit(this.state.email, this.state.password);
+// this.props.onSubmit(this.state.email, this.state.password);
  };
     render() {
         return (
@@ -27,7 +40,7 @@ this.props.onSubmit(this.state.email, this.state.password);
         //  </div>
       <div> 
         
-                 <form>
+                 <form onSubmit={this.handleOnSubmit}>
   <div className="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
@@ -41,10 +54,10 @@ this.props.onSubmit(this.state.email, this.state.password);
     onChange={() => console.log("fun Fun fun")}/>
   </div>
   <div className="form-check">
-    <label className="form-check-label">
+    {/* <label className="form-check-label">
       <input type="checkbox" className="form-check-input"/>
       Check me out
-    </label>
+    </label> */}
   </div>
   <button type="submit" className="btn btn-primary">Submit</button>
 </form>

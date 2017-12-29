@@ -2,22 +2,36 @@ import React, { Component } from "react";
 // import { render } from "react-dom";
 import { Button } from 'react-bootstrap';
 
+const ROOT_URL = "https://rmuse.live/api/login";
+
 class SignupForm extends Component {
-    state = {};
+    constructor() {
+        super();
+        this.state = {
+            firstname: "",
+            lastname: "",
+            username: '',
+            password: "",
+        };
+    }
     handleInputonChange = event => {
       this.setState({
         [event.target.name]: event.target.value
       });
     };
     handleOnSubmit = event => {
+        fetch(ROOT_URL)
+        .then(results => {
+            return results.json();
+        }).then(data =>{})
    event.preventDefault();
-   this.props.onSubmit(this.state.FirstName,this.state.LastName,this.state.password);
+//    this.props.onSubmit(this.state.FirstName,this.state.LastName,this.state.password);
     };
 
 render() {
     return(
 <div>
-    <form>
+    <form onSubmit={this.handleOnSubmit}>
         <div className="form-group">
             <label for="FirstName">First Name</label>
             <input type="FirstName" className="form-control" id="FirstName" placeholder="FirstName"/>
