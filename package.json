@@ -21,7 +21,8 @@
     "redux": "^3.7.2",
     "redux-form": "^7.2.0",
     "redux-thunk": "^2.2.0",
-    "theme-provider": "^1.0.8"
+    "theme-provider": "^1.0.8",
+    "webpack": "^3.10.0"
   },
   "scripts": {
     "start": "react-scripts start",

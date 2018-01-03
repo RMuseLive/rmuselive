@@ -2,11 +2,11 @@ import React, { Component } from "react";
 // import { render } from "react-dom";
 import { Button } from 'react-bootstrap';
 
-const ROOT_URL = "https://rmuse.live/api/login";
-
+const ROOT_URL = "https://rmuse.live/api/SiginForm";
+const ROOT= "./components/userProfile";
 class SignupForm extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             firstname: "",
             lastname: "",
@@ -20,7 +20,8 @@ class SignupForm extends Component {
       });
     };
     handleOnSubmit = event => {
-        fetch(ROOT_URL)
+        // fetch(ROOT_URL)
+        fetch(ROOT)
         .then(results => {
             return results.json();
         }).then(data =>{})

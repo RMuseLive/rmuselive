@@ -6,6 +6,8 @@ import {
   Redirect,
   withRouter
 } from "react-router-dom";
+import SignupForm from "./components/SignupForm";
+import LoginForm from "./components/LoginForm";
 import LogginButton from "./LogginButton";
 
 //1. Click the public page
@@ -16,18 +18,18 @@ import LogginButton from "./LogginButton";
 const Auth = () => (
   <Router>
     <div>
-      <AuthButton />
+      <AuthButton/>
       <ul>
         <li>
-          <Link to="/Home">Home Page</Link>
+          <Link to="/">Home Page</Link>
         </li>
         <li>
           <Link to="/UserProfile">User Profile</Link>
         </li>
       </ul>
-      <Route path="/Home" component={Home} />
-      <Route path="/Login" component={Login} />
-      <PrivateRoute path="/UserProfile" component={Protected} />
+      <Route path="/SignupForm" component={SignupForm} />
+      <Route path="/LoginForm" component={LoginForm} />
+      <PrivateRoute path="/UserProfile" component={userProfile} />
     </div>
   </Router>
 );
@@ -68,7 +70,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       ) : (
         <Redirect
           to={{
-            pathname: "/login",
+            pathname: "./components/LoginForm",
             state: { from: props.location }
           }}
         />
@@ -80,7 +82,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 const Public = () => <h3>Public</h3>;
 const Protected = () => <h3>Protected</h3>;
 
-class Login extends React.Component {
+class LoginForm extends React.Component {
   state = {
     redirectToReferrer: false
   };
@@ -99,8 +101,8 @@ class Login extends React.Component {
     }
     return (
       <div>
-        <p> You must log in to view page at {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
+        <p> You must log in to view page at {from.LoginForm}</p>
+        <button onClick={this.LoginForm}>Log in</button>
       </div>
     );
   }
