@@ -1,60 +1,65 @@
+import React from "react";
+import reactDOM from "react-dom";
+import render from "react-dom";
+import {
+    BrowserRouter as Router,
+    Route, 
+    Link,
+    Redirect,
+    withRouter,
+} from "react-router-dom"
 
-import React, { Component } from "react";
+const { Component } = React
+const target = document.getElementById("react-container")
 
-class AcountSettings extends Component {
-  state = {
-    image: "",
-    username: "",
-    bio: "",
-    email: "",
-    password: ""
-  };
 
-  componentWillMount() {
-    if (this.props.currentUser) {
-      const cu = this.props.currentUser;
-      Object.assign(this.state, {
-        image: cu.image || "",
-        username: cu.username,
-        bio: cu.bio,
-        email: cu.email
-      });
-    }
-  }
+class userProfile extends Component {
+    constructor(props) {
+    super(props)
+    this.state = {
+        userProfile: [],
+    loading: false,
+        error: null
+}
+}
+componentDidMount() {
+    fetch("http://rmuse.live/api/user")
+    .then(response => response.json())
+    .then(json => {
+    this.setState({loading:true})
+    getUserProfile(this.props.data).then(
+        userProfile => {
+            this.setState({user, loading:false})
+        },
+        error => {
+            this.setState({error, loading: false})
+        });
+        }
+    )
+}
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser) {
-      const cu = nextProps.currentUser;
-      this.setState(
-        Object.assign(this.state, {
-          image: cu.image || "",
-          username: cu.username,
-          bio: cu.bio,
-          email: cu.email
-        })
-      );
-    }
-  }
-
-  handleInputChange = event => {
-    const targetName = event.target.name;
-    this.setState({
-      [targetName]: event.target.value
-    });
-  };
-
-  submitForm = e => {
-    e.preventDefault();
-    const user = Object.assign({}, this.state);
-    if (user.password.length <= 0) {
-      delete user.password;
-    }
-    this.props.onSubmitForm(user);
-  };
-
-  render() {
+componentWillUpdate() {
+    console.log("updating lifecycle")
+}
+render() {
+    const { user, loading, error } = this.state
     return (
-      <form onSubmit={e => this.submitForm(e)}>
+        <div className="user">
+            {(loading) ?
+            <span>Loading</span> :
+            (user.length) ?
+            <User.map((user, i) =>
+                <member key={i} {...user} />
+                ) }
+                <span> No User loaded...</span>
+
+            }
+            {(error) ? <p> error loading user: error</p> : ""}
+            </div>
+    )
+}
+}
+        <form>
         <fieldset>
           <fieldset className="form-group">
             <input
@@ -122,6 +127,6 @@ class AcountSettings extends Component {
       </form>
     );
   }
-}
+  
 
 export default AccountSettings;

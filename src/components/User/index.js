@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import userProfile from "./userProfile";
+// import Auth from "./components/Auth";
 //import { Link } from "react-router-dom";
 //import { connect } from "react-redux";
 import { Grid, Row, Col } from "react-bootstrap";
