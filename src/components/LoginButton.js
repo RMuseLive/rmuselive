@@ -1,5 +1,5 @@
 import React from "react";
-function LogginButton(props) {
+function LoginButton(props) {
   return <button onClick={e => this.handleClick(e)}>Click Me</button>;
   function UserGreeting(props) {
     return <h3>Login</h3>;
@@ -14,4 +14,4 @@ function LogginButton(props) {
   return <GuestGreeting />;
 }
 
-export default LogginButton;
+export default LoginButton;

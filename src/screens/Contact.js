@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 import "react-bootstrap";
 
 class Contact extends Component {
   render() {
     return (
-      <div>
+      <div className="Contact">
+     
         <h5 className="title mb-4 font-bold">WHO WE ARE</h5>
         <p>
           This is our contact page. Here you can contact a member of the team.
@@ -23,6 +24,7 @@ class Contact extends Component {
         <p>
           <i className="fa fa-print mr-3" /> + 01 234 567 89
         </p>
+        
       </div>
     );
   }

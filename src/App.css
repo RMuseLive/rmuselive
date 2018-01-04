@@ -5,10 +5,10 @@
   color: rgb(7, 7, 7);
 }
 .App-footer {
-  background-color: rgb(3, 3, 3);
-  height: 150px;
-  padding: 20px;
-  color: rgb(7, 7, 7);
+  background-color: rgb(163, 159, 159);
+  height: 305px;
+  padding: 80px;
+  color: rgb(2, 2, 2);
 }
 
 body {
@@ -16,4 +16,34 @@ body {
   text-align: center;
   color: rgb(99, 87, 87);
   padding-top: 10em;
+}
+.search {
+  position: relative;
+  left: 1100px;
+  margin-top: -160px;
+}
+.social-section mt-2 {
+  float: inherit;
+  padding: 30px;
+}
+.footer-copyright {
+  padding: 40px;
+}
+.facbook {
+  padding: 10px;
+}
+.twitter {
+  padding: 10px;
+}
+.instagram {
+  padding: 10px;
+}
+.FAQ {
+  text-align: left;
+}
+.Contact {
+  text-align: center;
+}
+.About {
+  text-align: center;
 }
