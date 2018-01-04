@@ -44,6 +44,7 @@ const Auth = {
 
 export default {
   Auth,
+  requests,
   setToken: _token => {
     token = _token;
   }
