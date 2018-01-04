@@ -8,15 +8,11 @@ import Header from "./components/Header";
 // import Signin from "./Components/Signin";
 // import reducers from "./Components/reducers";
 import App from "./App";
-import userProfile from "./components/User/userProfile";
-
 
 //import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
-
-           <App />,
+  <App />,
 
   document.getElementById("root")
 );
-
