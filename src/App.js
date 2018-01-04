@@ -3,12 +3,12 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Support from "./components/Support";
-import User from "./components/User";
-import FAQ from "./components/FAQ";
+import Home from "./screens/HomeScreen";
+import About from "./screens/About";
+import Contact from "./screens/Contact";
+import Support from "./screens/Support";
+import ProfileScreen from "./screens/ProfileScreen";
+import FAQ from "./screens/FAQ";
 
 class App extends Component {
   render() {
@@ -20,11 +20,10 @@ class App extends Component {
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
-              {/* <Route path="/User" component={User} /> */}
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/support" component={Support} />
-              <Route path="/User" component={User} />
+              <Route path="/ProfileScreen" component={ProfileScreen} />
               <Route path="/faq" component={FAQ} />
             </Switch>
           </div>
