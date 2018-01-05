@@ -49,14 +49,15 @@ class Home extends Component {
         </div>
         <div>
         
-          <Grid><h2 className="text-left">What's New</h2>
+          <Grid>
+            <h2 className="text-left">What's New</h2>
             <Row>
               <Col sm={4}>
                 {
                 <Img  
-                  className="img-square" 
+                  className="image-square" 
                   src="/images/003.JPG" 
-                  alt="Saraine and me" 
+                  alt="Lunch" 
                   />
                }
                 <p className="text-justify">Picture</p>
@@ -163,9 +164,9 @@ class Home extends Component {
             <Col sm={4}>
             {
             <Img  
-              className="img-square" 
+              className="image-square" 
               src="/images/003.JPG" 
-              alt="Saraine and me" 
+              alt="Lunch" 
               />
            }
             <p className="text-justify">Picture</p>
@@ -272,9 +273,9 @@ class Home extends Component {
             <Col sm={4}>
             {
             <Img  
-              className="img-square" 
+              className="image-square" 
               src="/images/003.JPG" 
-              alt="Saraine and me" 
+              alt="lunch" 
               />
            }
             <p className="text-justify">Picture</p>
