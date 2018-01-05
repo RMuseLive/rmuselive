@@ -16,17 +16,17 @@ class Home extends Component {
       //Insert columns here.
       <div className="App">
         <h1>
-          <a
-            href=""
-            className="typewrite"
-            data-period="2000"
-            data-type="[ &quot;Hi, Im an Artist.&quot;, &quot;I am Creative.&quot;, &quot;I Love Design.&quot;, &quot;I Love to Develop.&quot;]"
-          >
-            <span className="wrap" />
-          </a>
+         Welcome to Rmuse Live
         </h1>
 
-        <div className="col-xs-2">
+        <h1>
+        <a href="/calendar">Events</a> 
+        </h1>
+        <div>
+        
+          <Grid>
+            <Row>
+          <div className="col-xs-2">
         <form className="search">
           <div className="input-group" >
           <label for="ex1"></label>
@@ -39,9 +39,8 @@ class Home extends Component {
         </div>
 </form>
         </div>
-        <div>
-        
-          <Grid><h2 className="text-left">What's New</h2>
+        </Row>
+            <h2 className="text-left">What's New</h2>
             <Row>
               <Col sm={4}>
                 {/* <img src="IMG/Music.png" className="img-square" alt="Music" /> */}
