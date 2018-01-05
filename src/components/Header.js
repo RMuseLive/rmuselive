@@ -6,6 +6,7 @@ import ReactFilestack from "filestack-react";
 class Header extends Component {
   render() {
     return (
+
       <header className="App-header">
         <text>Welcome</text>
         <RegisterLoginModal />
@@ -17,6 +18,7 @@ class Header extends Component {
           onSuccess={this.yourCallbackFunction}
         />
       </header>
+
     );
   }
 }

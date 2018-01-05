@@ -39,150 +39,145 @@ class Home extends Component {
         </div>
 </form>
         </div>
-        </Row>
-            <h2 className="text-left">What's New</h2>
-            <Row>
-              <Col sm={4}>
-                {/* <img src="IMG/Music.png" className="img-square" alt="Music" /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-            </Row>
-            <h2 className="text-left">Most Popular</h2>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-            </Row>
-            <h2 className="text-left">Trending Now</h2>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-            </Row>
-            <h2 className="text-left">Most Shared</h2>
-            <Row>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              <Col sm={4}>
-                {/* <img /> */}
-                <p className="text-justify">Picture</p>
-              </Col>
-              </Row>
-          </Grid>
+
+        <div>
+        
+        <Grid>
+        <h2 className="text-left">What's New</h2>
+        <Row className="row-1">
           
-       
-        </div>
-      </div>
-    );
-  }
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+         
+            <img
+              
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT48vG9Sm_ruh5PNYT0i1Xcv5pK9QGLcbsyTCRD99apRppj-vJ"
+              alt="0"
+            />
+          
+            <img
+              
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQunCS-EFtX8J1YSVS_1osMXka5mnNfM94SMSCqptyB68OXQKgd4A"
+              alt="0"
+            />
+          
+        </Row>
+        <Row className="row-2">
+          
+            <img
+              
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrHT83tfWCefPtvaCJmuZSGhWh5QeQox7N9Cs_gfrzXi8qcZO5Wg"
+              alt="0"
+            />
+          
+            <img
+              
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0Mn-7xSid9r_Ie462yG7vGxajheppssAx_7cev-jd5tZUrR0Hw"
+              alt="0"
+            />
+          
+            <img
+              
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ41mFSGyzDhlkz1-SldeF0co5LHGE4h3cqczH94TReoOef7O3N1A"
+              alt="0"
+            />
+          
+        </Row>
+        <Row className="row-3">
+          
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+         
+            <img
+              
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5HBW7xEwqY1k1DGaT5ct03OUj0zFuaieszywDyEAwqJ7v32nKgQ"
+              alt="1"
+            />
+        
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+          
+        </Row>
+        <h2 className="text-left">Most Popular</h2>
+        <Row className="row-4">
+          
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+          
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+          
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+
+            </Row>
+
+            <Row className="row-5">
+        
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+         
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+          
+            <img
+              
+              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              alt="0"
+            />
+        
+        </Row>
+
+        <h2 className="text-left">Trending Now</h2>
+
+        <Row className="row-6">
+          <img
+            
+            src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+            alt="0"
+          />
+          <im
+            className="picture-grid"
+            src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+            alt="0"
+          />
+          <im
+            className="picture-grid"
+            src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+            alt="0"
+          />
+        </Row>
+      </Grid>
+    </div>
+  </div>
+);
+}
+            
+     
   /*3 step sign up process goes somewhere down here.
       1. Sign Up
       2. Cutomize Profile

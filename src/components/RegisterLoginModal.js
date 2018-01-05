@@ -56,7 +56,9 @@ class RegisterLoginModal extends React.Component {
     agent.Auth
       .login(this.state.Email, this.state.Password)
       .then(payload => {
-        console.log(`look at the unique user heheheh ${payload.username}`);
+        console.log(`look at the unique user heheheh ${payload.username}`
+      );
+      
       })
       .catch(err => {
         console.log(err);
@@ -106,9 +108,9 @@ class RegisterLoginModal extends React.Component {
                   <label for="Password">Password:</label>
                   <input type="password" name="Password" onChange={this.ChangePassword} />
                 </div>
-                <button type="button" class="btn btn-dark" onClick={this.LogIn}>
+               <a href= "ProfileScreen"> <button type="button" class="btn btn-dark" onClick={this.Login}>
                   Login
-                </button>
+                </button></a>
               </Tab>
               <Tab eventKey={2} title="Sign Up" style={{display: 'flex', flexDirection: 'column'}}>
                 <h1>Sign Up</h1>
