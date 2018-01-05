@@ -6,7 +6,7 @@ import ReactFilestack from "filestack-react";
 class Header extends Component {
   render() {
     return (
-      <header className="Header">
+      <header className="App-header">
         <text>Welcome</text>
         <RegisterLoginModal />
         <ReactFilestack

@@ -1,11 +1,11 @@
 .App-header {
-  background-color: #222;
+  background-color: rgba(10, 201, 248, 0.5);
   height: 150px;
   padding: 20px;
   color: rgb(7, 7, 7);
 }
 .App-footer {
-  background-color: rgb(163, 159, 159);
+  background-color: rgba(153, 151, 151, 0.5);
   height: 305px;
   padding: 80px;
   color: rgb(2, 2, 2);
@@ -14,12 +14,12 @@
 body {
   background-color: #7aa5e6;
   text-align: center;
-  color: rgb(99, 87, 87);
+  color: rgb(29, 27, 27);
   padding-top: 10em;
 }
 .search {
   position: relative;
-  left: 1100px;
+  left: 300px;
   margin-top: -160px;
 }
 .social-section mt-2 {
@@ -46,4 +46,13 @@ body {
 }
 .About {
   text-align: center;
+}
+body{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7d1x_RMdxhuhkPPl1xNT8WVt2dCldR2SjnBmbbE6KBPt_yQCN); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+ }
+ .Back {
+  text-align: left;
 }
