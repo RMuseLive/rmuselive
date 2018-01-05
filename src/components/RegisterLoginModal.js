@@ -88,7 +88,7 @@ class RegisterLoginModal extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.openModal} style={{ height: 50, width: 200 }}>
+        <button onClick={this.openModal} style={{ height: 40, width: 150 }}>
           Register/Log-in
         </button>
         <Modal isOpen={this.state.isOpen} onRequestHide={this.hideModal}>

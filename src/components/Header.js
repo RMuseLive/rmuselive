@@ -8,15 +8,9 @@ class Header extends Component {
     return (
 
       <header className="App-header">
-        <text>Welcome</text>
+       
         <RegisterLoginModal />
-        <ReactFilestack
-          apikey={"Av2OyyRf4Q16K5npkOJpBz"}
-          buttonText="FileStack Open"
-          buttonClass="FileStack"
-          // options={options}
-          onSuccess={this.yourCallbackFunction}
-        />
+        
       </header>
 
     );
