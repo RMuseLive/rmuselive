@@ -9,7 +9,7 @@ import Contact from "./screens/Contact";
 import Support from "./screens/Support";
 import ProfileScreen from "./screens/ProfileScreen";
 import FAQ from "./screens/FAQ";
-
+// import Header from "./components/Header";
 class App extends Component {
   render() {
     return (
@@ -25,6 +25,7 @@ class App extends Component {
               <Route path="/support" component={Support} />
               <Route path="/ProfileScreen" component={ProfileScreen} />
               <Route path="/faq" component={FAQ} />
+              
             </Switch>
           </div>
         </Router>
