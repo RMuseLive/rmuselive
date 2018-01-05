@@ -20,7 +20,7 @@ class About extends Component {
               <h4>Talitha Villaloboes</h4>
               <p>Founder/Front-End </p>
               <p>
-                Talitha created the idea of RMuse Live. She wanted a palce for
+                Talitha created the idea of RMuse Live. She wanted a place for
                 Artist to come and share their work with others and collabrate
                 with businesses.
               </p>
@@ -41,6 +41,8 @@ class About extends Component {
               <img src="" alt="" />
               <h4>John Lyons</h4>
               <p>Front-End</p>
+              </Col>
+              <Col sm={5} md={2}>
               <h4>Anthony Dickerson</h4>
               <p>Native Response</p>
             </Col>
