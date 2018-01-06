@@ -6,17 +6,13 @@ import ReactFilestack from "filestack-react";
 class Header extends Component {
   render() {
     return (
-      <header className="Header">
-        <text>Welcome</text>
+
+      <header className="App-header">
+       
         <RegisterLoginModal />
-        <ReactFilestack
-          apikey={"Av2OyyRf4Q16K5npkOJpBz"}
-          buttonText="FileStack Open"
-          buttonClass="FileStack"
-          // options={options}
-          onSuccess={this.yourCallbackFunction}
-        />
+        
       </header>
+
     );
   }
 }

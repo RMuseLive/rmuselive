@@ -6,6 +6,7 @@ class About extends Component {
   render() {
     return (
       <div id="team" className="About">
+      <a href="/" className="text-justify">Back to Home</a>
         <Grid>
           <Row>
             <h1 className="title mb-4 font-bold">Meet the Team</h1>
@@ -19,7 +20,7 @@ class About extends Component {
               <h4>Talitha Villaloboes</h4>
               <p>Founder/Front-End </p>
               <p>
-                Talitha created the idea of RMuse Live. She wanted a palce for
+                Talitha created the idea of RMuse Live. She wanted a place for
                 Artist to come and share their work with others and collabrate
                 with businesses.
               </p>
@@ -40,6 +41,8 @@ class About extends Component {
               <img src="" alt="" />
               <h4>John Lyons</h4>
               <p>Front-End</p>
+              </Col>
+              <Col sm={5} md={2}>
               <h4>Anthony Dickerson</h4>
               <p>Native Response</p>
             </Col>

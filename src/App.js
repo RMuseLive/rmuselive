@@ -10,6 +10,9 @@ import Support from "./screens/Support";
 import ProfileScreen from "./screens/ProfileScreen";
 import FAQ from "./screens/FAQ";
 
+import Calendar from "./components/calendar";
+
+
 class App extends Component {
   render() {
     return (
@@ -25,6 +28,9 @@ class App extends Component {
               <Route path="/support" component={Support} />
               <Route path="/ProfileScreen" component={ProfileScreen} />
               <Route path="/faq" component={FAQ} />
+
+              <Route path="/calendar" component={Calendar} />
+
             </Switch>
           </div>
         </Router>
