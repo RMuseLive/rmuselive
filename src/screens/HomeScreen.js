@@ -1,17 +1,25 @@
 import React, { Component } from "react";
 //import { Link } from "react-router-dom";
 import { Grid, Row, Col } from "react-bootstrap";
+import Img from 'react-image';
+import "../index.css"
 
 
 
 
 
-/*Trending title goes at top of page. Different categories of trending artists. Such as Photography, Filmagraphy, Music, vidoes, etc.
+
+Trending title goes at top of page. Different categories of trending artists. Such as Photography, Filmagraphy, Music, vidoes, etc.
+
  columns of three or four.
-Next 3 step sin up. Sign Up - Customize - Connect. Maybe move the Navbar in landing page or
-leave it in the header.  Maybe change the navbar to navigate around the page.*/
-
+Next 3 step sign up.
+ Sign Up - Customize - Connect.
+  Maybe move the Navbar in landing page or
+leave it in the header.
+  Maybe change the navbar to navigate around the page.*/
+console.log(this.props);
 class Home extends Component {
+  
   render() {
     return (
       //Insert columns here.
@@ -47,6 +55,349 @@ class Home extends Component {
 </Grid>
         <div>
         
+
+          <Grid>
+            <h2 className="text-left">What's New</h2>
+            <Row>
+              <Col sm={4}>
+                {
+                <Img  
+                  className="image-square" 
+                  src="/images/003.JPG" 
+                  alt="Lunch" 
+                  />
+               }
+                <p className="text-justify">Picture</p>
+                </Col>
+              <Col sm={4}>
+                { <Img 
+                  className='image-square'
+                  src="/images/bw.jpg"
+                  alt="14 Street" 
+                 /> }
+                <p className="text-justify">Picture</p>
+                </Col>
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/contact.jpg"
+                  alt="14 Street" 
+                 /> }
+                <p className="text-justify">Picture</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/gallery.jpg"
+                  alt="14 Street" 
+                 /> }
+                <p className="text-justify">Picture</p>
+                </Col>
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/index.jpg"
+                  alt="14 Street" 
+                 /> }
+                <p className="text-justify">Picture</p>
+                </Col>
+                <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/portpholio.jpg"
+                  alt="14 Street" 
+                 /> }
+                <p className="text-justify">Picture</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/portpholio.jpg"
+                  alt="14 Street" 
+                 /> }
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/portrait.jpg"
+                  alt="14 Street" 
+                 />}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/springbloosom.jpg"
+                  alt="14 Street" 
+                 />}
+                <p className="text-justify">Picture</p>
+              </Col>
+            </Row>
+            <h2 className="text-left">Most Popular</h2>
+            <Row>
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/stillife.jpg"
+                  alt="14 Street" 
+                 />}
+                <p className="text-justify">Picture</p>
+              </Col>
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/portpholio.jpg"
+                  alt="14 Street" 
+                 /> }
+                <p className="text-justify">Picture</p>
+              </Col>  
+              <Col sm={4}>
+                {<Img 
+                  className='image-square'
+                  src="/images/stop.jpg"
+                  alt="14 Street" 
+                 />}
+                <p className="text-justify">Picture</p>
+              </Col>
+             
+            </Row>
+            <h2 className="text-left">Trending Now</h2>
+            <Row>
+            <Col sm={4}>
+            {
+            <Img  
+              className="image-square" 
+              src="/images/003.JPG" 
+              alt="Lunch" 
+              />
+           }
+            <p className="text-justify">Picture</p>
+            </Col>
+          <Col sm={4}>
+            { <Img 
+              className='image-square'
+              src="/images/bw.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+            </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/contact.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/gallery.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+            </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/index.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+            </Col>
+            <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/portpholio.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/portpholio.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+          </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/portrait.jpg"
+              alt="14 Street" 
+             />}
+            <p className="text-justify">Picture</p>
+          </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/springbloosom.jpg"
+              alt="14 Street" 
+             />}
+            <p className="text-justify">Picture</p>
+          </Col>
+        </Row>
+        <h2 className="text-left">Most Popular</h2>
+        <Row>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/stillife.jpg"
+              alt="14 Street" 
+             />}
+            <p className="text-justify">Picture</p>
+          </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/portpholio.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+          </Col>  
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/stop.jpg"
+              alt="14 Street" 
+             />}
+            <p className="text-justify">Picture</p>
+          </Col>
+         
+            </Row>
+            <h2 className="text-left">Most Shared</h2>
+            <Row>
+            <Col sm={4}>
+            {
+            <Img  
+              className="image-square" 
+              src="/images/003.JPG" 
+              alt="lunch" 
+              />
+           }
+            <p className="text-justify">Picture</p>
+            </Col>
+          <Col sm={4}>
+            { <Img 
+              className='image-square'
+              src="/images/bw.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+            </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/contact.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/gallery.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+            </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/index.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+            </Col>
+            <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/portpholio.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/portpholio.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+          </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/portrait.jpg"
+              alt="14 Street" 
+             />}
+            <p className="text-justify">Picture</p>
+          </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/springbloosom.jpg"
+              alt="14 Street" 
+             />}
+            <p className="text-justify">Picture</p>
+          </Col>
+        </Row>
+        <h2 className="text-left">Most Popular</h2>
+        <Row>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/stillife.jpg"
+              alt="14 Street" 
+             />}
+            <p className="text-justify">Picture</p>
+          </Col>
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/portpholio.jpg"
+              alt="14 Street" 
+             /> }
+            <p className="text-justify">Picture</p>
+          </Col>  
+          <Col sm={4}>
+            {<Img 
+              className='image-square'
+              src="/images/stop.jpg"
+              alt="14 Street" 
+             />}
+            <p className="text-justify">Picture</p>
+          </Col>
+         
+              </Row>
+          </Grid>
+          
+       
+        </div>
+      </div>
+    );
+  }
+  /*3 step sign up process goes somewhere down here.
+      1. Sign Up
+      2. Cutomize Profile
+      3. Connect
+      Two buttons one says Join Now the other says Explore.
+      */
+
         <Grid>
         <h2 className="text-left">What's New</h2>
         <Row className="row-1">
@@ -204,5 +555,7 @@ class Home extends Component {
             
      
  
+
 }
 export default Home;
+
