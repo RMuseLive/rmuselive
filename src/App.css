@@ -1,15 +1,16 @@
 .App-header {
-  background-color: rgba(10, 201, 248, 0.5);
+  background-color: rgba(109, 209, 235, 0.5);
   height: 150px;
   padding: 20px;
  
 }
 .App-footer {
-  background-color: rgba(153, 151, 151, 0.5);
+  background-color: rgba(243, 240, 240, 0.671);
   height: 305px;
   padding: 80px;
   color: rgb(2, 2, 2);
 }
+
 
 body {
  
@@ -20,7 +21,7 @@ body {
 .search {
   position: relative;
   left: 30px;
-  margin-top: -180px;
+  margin-top: -140px;
 }
 .social-section mt-2 {
   float: inherit;
@@ -59,4 +60,5 @@ body{
 #abstract{
   height: 100%;
   width: 100%;
+ 
 }

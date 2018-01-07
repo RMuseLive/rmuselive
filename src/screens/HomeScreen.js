@@ -5,6 +5,7 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 
 
+
 /*Trending title goes at top of page. Different categories of trending artists. Such as Photography, Filmagraphy, Music, vidoes, etc.
  columns of three or four.
 Next 3 step sin up. Sign Up - Customize - Connect. Maybe move the Navbar in landing page or
@@ -16,8 +17,10 @@ class Home extends Component {
       //Insert columns here.
       <div className="App">
         <h1>
-         Welcome to Rmuse Live
+       
         </h1>
+
+        
 <div>
         <h1>
         <a href="/calendar">Events</a> 
@@ -26,12 +29,12 @@ class Home extends Component {
         </div>
           <Grid>
             <Row>
-          <div className="col-med-2">
+          <div className="col-mid-2">
         <form className="search">
           <div className="input-group" >
           <label for="ex1"></label>
         <input type="text" className="form-control" placeholder="Search artist name or art"/>
-         <div className="input-group-btn">
+         <div className="input-group-btn-small">
             <button className="btn btn-default" type="submit">
         <i className="glyphicon glyphicon-search"></i>
           </button>
@@ -49,7 +52,7 @@ class Home extends Component {
         <Row className="row-1">
           <Col md={4}>
             <img
-              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD99J6NZvC-Zi6QvyCY6QdVmV4q77OYlZHhYvwtZ-8kKn4JF9rNQ"
               alt="0" id="abstract" className="img-rounded"
             />
             </Col>
@@ -86,8 +89,8 @@ class Home extends Component {
            <Col md={4}>
             <img
               
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ41mFSGyzDhlkz1-SldeF0co5LHGE4h3cqczH94TReoOef7O3N1A"
-              alt="0" className="img-rounded"
+              src="http://jazjaz.net/wp-content/uploads/2013/08/And-Light-Fell-On-Her-Face-Through-H1_thumb.jpg"
+              alt="0"id="abstract" className="img-rounded"
             />
           </Col>
         </Row>
@@ -95,7 +98,7 @@ class Home extends Component {
           <Col md={4}>
             <img
               
-              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              src="http://www.madhatterdc.com/wp-content/uploads/2014/06/Ajax_DJ.jpg"
               alt="0" id="abstract" className="img-rounded"
             />
             </Col>
@@ -114,26 +117,29 @@ class Home extends Component {
             />
           </Col>
         </Row>
+        
+        
+        
         <h2 className="text-left">Most Popular</h2>
         <Row className="row-4">
           <Col md={4}>
             <img
               
-              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT2vEKPzYZYxz3Hv7rSOz_Oq90F4kby0rcDgUP_dpDojHn9hvk"
               alt="0" id="abstract" className="img-rounded"
             />
             </Col>
            <Col md={4}>
             <img
               
-              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvq35IGqMD8nVbSiM-rZLmhGu38y6EfstD8vss86v-JDea98nlQ"
               alt="0" id="abstract" className="img-rounded"
             />
             </Col>
            <Col md={4}>
             <img
               
-              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              src="http://s3.amazonaws.com/cdn.roosterteeth.com/uploads/images/cec5fe63-9aa2-4c4c-b094-e4d5a9fd3c55/md/2073008-1442720293891-8752281.jpg"
               alt="0" id="abstract" className="img-rounded"
             />
 </Col>
@@ -143,14 +149,14 @@ class Home extends Component {
         <Col md={4}>
             <img
               
-              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI3wqJW5uUWMD8VlbDJZFP_DzpWdpgumQkoGl5j5tPVX7hZOMrcg"
               alt="0" id="abstract" className="img-rounded"
             />
             </Col>
             <Col md={4}>
             <img
               
-              src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+              src="https://thumbs.dreamstime.com/b/couple-salsa-dance-bollywood-song-young-dancing-illustrated-abstract-line-art-54701355.jpg"
               alt="0" id="abstract" className="img-rounded"
             />
             </Col>
@@ -173,17 +179,18 @@ class Home extends Component {
             alt="0" id="abstract" className="img-rounded"
           />
           </Col>
-           <Col md={4}>
-          <im
-            className="picture-grid"
+          <Col md={4}>
+          <img
+            
             src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
             alt="0" id="abstract" className="img-rounded"
           />
           </Col>
+
           <Col md={4}>
-          <im
-            className="picture-grid"
-            src="https://artist.com/art-recognition-and-education/wp-content/themes/artist-blog/media-files/2016/05/abstract-6.jpg"
+          <img
+            
+            src="http://wallportal.com/uploads/posts/jazz-art-wallpaper/jazz_art_wallpaper_004.jpg"
             alt="0" id="abstract" className="img-rounded"
           />
           </Col>

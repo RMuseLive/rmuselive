@@ -1,4 +1,7 @@
 import React from "react";
+import agent from '../agent';
+// once signed in user must be verified.
+
 function LoginButton(props) {
   return <button onClick={e => this.handleClick(e)}>Click Me</button>;
   function UserGreeting(props) {
@@ -13,5 +16,6 @@ function LoginButton(props) {
   }
   return <GuestGreeting />;
 }
+//login button should be gone when signed in and change to logout opption.
 
 export default LoginButton;
