@@ -11,8 +11,6 @@ import React, { Component } from "react";
 import agent from "../agent";
 //connecting to user agent to login, now user,
 
-// import SignupSettings from"./components/User/Settings/SignupSettings";
-// import LoginSettings from "./components/User/Settings/LoginSettings";
 
 class RegisterLoginModal extends React.Component {
   constructor(props) {
@@ -121,7 +119,7 @@ class RegisterLoginModal extends React.Component {
                       this.setState({ Email: event.target.value })
                     }
                   />
-                  <input type="text" name="Email" onChange={this.ChangeEmail} />
+                  {/* <input type="text" name="Email" onChange={this.ChangeEmail} /> */}
                 </div>
                 <div>
                   <label htmlFor="Password">Password:</label>

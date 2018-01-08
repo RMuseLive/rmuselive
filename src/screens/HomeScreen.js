@@ -18,295 +18,32 @@ render() {
 return (
 //Insert columns here.
 <div className="App">
->>>>>>> Stashed changes
 <div>
 <h1>
 <a href="/calendar">Events</a>
 </h1>
 </div>
-<Grid>
-<Row>
-<div className="col-mid-2">
+
+<div className="col-mid-4">
 <form className="search">
 <div className="input-group">
-<label for="ex1" />
+<label htmlFor="ex1" />
 <input
 type="text"
 className="form-control"
 placeholder="Search artist name or art"
 />
-<div className="input-group-btn-small">
+
 <button className="btn btn-default" type="submit">
 <i className="glyphicon glyphicon-search" />
 </button>
-</div>
+ 
 </div>
 </form>
 </div>
-</Row>
-</Grid>
 <Grid>
 <h2 className="text-left">What's New</h2>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/003.JPG"
-alt="Lunch"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/bw.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/contact.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/gallery.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/index.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portpholio.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portpholio.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portrait.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/springbloosom.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-<h2 className="text-left">Most Popular</h2>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/stillife.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portpholio.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/stop.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-<h2 className="text-left">Trending Now</h2>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/003.JPG"
-alt="Lunch"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/bw.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/contact.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/gallery.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/index.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portpholio.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portpholio.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portrait.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/springbloosom.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-<h2 className="text-left">Most Popular</h2>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/stillife.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portpholio.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/stop.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-<h2 className="text-left">Most Shared</h2>
+<Row className="row-1">
 <Row>
 <Col sm={4}>
 {
@@ -403,47 +140,6 @@ alt="14 Street"
 <p className="text-justify">Picture</p>
 </Col>
 </Row>
-<h2 className="text-left">Most Popular</h2>
-<Row>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/stillife.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/portpholio.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-<Col sm={4}>
-{
-<Img
-className="image-square"
-src="/images/stop.jpg"
-alt="14 Street"
-/>
-}
-<p className="text-justify">Picture</p>
-</Col>
-</Row>
-</Grid>
-
-/*3 step sign up process goes somewhere down here. 1. Sign Up 2.
-Cutomize Profile 3. Connect Two buttons one says Join Now the other says
-Explore. */
-<Grid>
-<h2 className="text-left">What's New</h2>
-<Row className="row-1">
 <Col md={4}>
 <img
 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD99J6NZvC-Zi6QvyCY6QdVmV4q77OYlZHhYvwtZ-8kKn4JF9rNQ"
@@ -516,9 +212,137 @@ className="img-rounded"
 />
 </Col>
 </Row>
->>>>>>> Stashed changes
 
-<h2 className="text-left">Most Popular</h2>
+
+<h2 className="text-left">Most Shared</h2>
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/003.JPG"
+alt="Lunch"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/bw.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/contact.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/gallery.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/index.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portpholio.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portpholio.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portrait.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/springbloosom.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/stillife.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portpholio.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/stop.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
 <Row className="row-4">
 <Col md={4}>
 <img
@@ -574,6 +398,169 @@ className="img-rounded"
 </Row>
 
 <h2 className="text-left">Trending Now</h2>
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/stillife.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portpholio.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/stop.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
+
+
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/003.JPG"
+alt="Lunch"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/bw.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/contact.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/gallery.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/index.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portpholio.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portpholio.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portrait.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/springbloosom.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
+<h2 className="text-left">Most Popular</h2>
+<Row>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/stillife.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/portpholio.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+<Col sm={4}>
+{
+<Img
+className="image-square"
+src="/images/stop.jpg"
+alt="14 Street"
+/>
+}
+<p className="text-justify">Picture</p>
+</Col>
+</Row>
 
 <Row className="row-6">
 <Col md={4}>
