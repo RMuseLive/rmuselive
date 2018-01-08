@@ -6,9 +6,10 @@ import {
   ModalBody,
   ModalFooter
 } from "react-modal-bootstrap";
-import button, {Tabs, Tab} from "react-bootstrap";
+import button, { Tabs, Tab } from "react-bootstrap";
 import React, { Component } from "react";
 import agent from "../agent";
+//connecting to user agent to login, now user,
 
 // import SignupSettings from"./components/User/Settings/SignupSettings";
 // import LoginSettings from "./components/User/Settings/LoginSettings";
@@ -41,27 +42,33 @@ class RegisterLoginModal extends React.Component {
 
   SignUp = event => {
     event.preventDefault();
-    agent.Auth
-      .register(this.state.Username, this.state.Email, this.state.Password)
+    agent.Auth.register(
+      this.state.Username,
+      this.state.Email,
+      this.state.Password
+    )
       .then(loggedInUser => {
         console.log("Signed-Up");
       })
+      .then(payload =>
+        this.props.history.push(`/ProfileScreen/${payload.username}`)
+      )
       .catch(err => {
-        console.log(err);
+        console.log("SIGN UP ERROR", err);
       });
   };
 
   LogIn = event => {
     event.preventDefault();
-    agent.Auth
-      .login(this.state.Email, this.state.Password)
+    agent.Auth.login(this.state.Email, this.state.Password)
       .then(payload => {
-        console.log(`look at the unique user heheheh ${payload.username}`
-      );
-      
+        console.log(`look at the unique user heheheh ${payload.username}`);
       })
+      .then(payload =>
+        this.props.history.push(`/ProfileScreen/${payload.username}`)
+      )
       .catch(err => {
-        console.log(err);
+        console.log("LOG IN ERROR", err);
       });
   };
 
@@ -86,6 +93,7 @@ class RegisterLoginModal extends React.Component {
   }
 
   render() {
+    console.log("LOGIN MODAL STATE", this.state);
     return (
       <div>
         <button onClick={this.openModal} style={{ height: 40, width: 150 }}>
@@ -98,43 +106,89 @@ class RegisterLoginModal extends React.Component {
           </ModalHeader>
           <ModalBody>
             <Tabs defaultActiveKey={1} id="login-tabs">
-              <Tab eventKey={1} title="Login" style={{display: 'flex', flexDirection: 'column'}}>
+              <Tab
+                eventKey={1}
+                title="Login"
+                style={{ display: "flex", flexDirection: "column" }}
+              >
                 <h1>Login</h1>
                 <div>
-                  <label for="Email">Email:</label>
+                  <label htmlFor="Email">Email:</label>
+                  <input
+                    type="text"
+                    name="Email"
+                    onChange={event =>
+                      this.setState({ Email: event.target.value })
+                    }
+                  />
                   <input type="text" name="Email" onChange={this.ChangeEmail} />
                 </div>
                 <div>
-                  <label for="Password">Password:</label>
-                  <input type="password" name="Password" onChange={this.ChangePassword} />
+                  <label htmlFor="Password">Password:</label>
+                  <input
+                    type="password"
+                    name="Password"
+                    onChange={this.ChangePassword}
+                  />
                 </div>
-               <a href= "ProfileScreen"> <button type="button" class="btn btn-dark" onClick={this.Login}>
-                  Login
-                </button></a>
+                <a href="ProfileScreen">
+                  {" "}
+                  <button
+                    type="button"
+                    className="btn btn-dark"
+                    onClick={this.Login}
+                  >
+                    Login
+                  </button>
+                </a>
               </Tab>
-              <Tab eventKey={2} title="Sign Up" style={{display: 'flex', flexDirection: 'column'}}>
+              <Tab
+                eventKey={2}
+                title="Sign Up"
+                style={{ display: "flex", flexDirection: "column" }}
+              >
                 <h1>Sign Up</h1>
                 <div>
-                  <label for="Username">Username:</label>
-                  <input type="text" name="Firstname" onChange={this.ChangeFirstname} />
+                  <label htmlFor="Username">Username:</label>
+                  <input
+                    type="text"
+                    name="Username"
+                    onChange={event => this.ChangeUsername(event)}
+                  />
                 </div>
                 <div>
-                  <label for="Firstname">First Name:</label>
-                  <input type="text" name="Lastname" onChange={this.ChangeLastname} />
+                  <label htmlFor="Firstname">First Name:</label>
+                  <input
+                    type="text"
+                    name="Firstname"
+                    onChange={event => this.ChangeFirstname(event)}
+                  />
                 </div>
                 <div>
-                  <label for="Lastname">Last Name:</label>
-                  <input type="text" name="Username" onChange={this.ChangeUsername} />
+                  <label htmlFor="Lastname">Last Name:</label>
+                  <input
+                    type="text"
+                    name="Lastname"
+                    onChange={event => this.ChangeLastname(event)}
+                  />
                 </div>
                 <div>
-                  <label for="Email">Email:</label>
+                  <label htmlFor="Email">Email:</label>
                   <input type="text" name="Email" onChange={this.ChangeEmail} />
                 </div>
                 <div>
-                  <label for="Password">Password:</label>
-                  <input type="password" name="Password" onChange={this.ChangePassword} />
+                  <label htmlFor="Password">Password:</label>
+                  <input
+                    type="password"
+                    name="Password"
+                    onChange={event => this.ChangePassword(event)}
+                  />
                 </div>
-                <button type="button" class="btn btn-dark" onClick={this.SignUp}>
+                <button
+                  type="button"
+                  className="btn btn-dark"
+                  onClick={this.SignUp}
+                >
                   SignUp
                 </button>
               </Tab>
