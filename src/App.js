@@ -28,9 +28,9 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/support" component={Support} />
-              <Route path="/profile" component={ProfileScreen} />
+              <Route path="/ProfileScreen" component={ProfileScreen} />
               <Route path="/faq" component={FAQ} />
-              <Route path="/usersetting" component={UserSettingScreen}/>
+              <Route path="/UserSettingScreen" component={UserSettingScreen}/>
               <Route path="/login" component={Login} />
               <Route path="/logout" component={Logout} />
 

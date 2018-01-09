@@ -7,6 +7,7 @@ import UserSetting from "./UserSettingScreen";
 
 import agent from "../agent";
 
+
 //filestack button moved from header
 class ProfileScreen extends Component {
   state = {
@@ -53,7 +54,7 @@ class ProfileScreen extends Component {
                     </Link>
                    <a href="/usersettingscreen">Settings</a>
                     <button className="btn btn-primary">Logout</button>
-
+                   
                     <ReactFilestack
                       apikey={"Av2OyyRf4Q16K5npkOJpBz"}
                       buttonText="FileStack Open"
