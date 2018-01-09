@@ -57,11 +57,6 @@ body{
  .Back {
   text-align: left;
 }
-#abstract{
-  height: 100%;
-  width: 100%;
- 
-}
 .form-group {
   margin-left: 20em;
   margin-right: 20em;
@@ -70,4 +65,20 @@ body{
 #update {
   padding: 10px;
   margin: 2em;
+}
+#abstract{
+  display:flex;
+  flex-wrap:wrap;
+  height: 100%;
+  width: 100%;
+}
+#abstract1{
+  display:flex;
+  flex-wrap:wrap;
+  height: 70%;
+  width: 80%;
+}
+#logo{
+  width:400px;
+  height:100px;
 }
