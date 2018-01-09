@@ -12,6 +12,7 @@ class Header extends Component {
         <Link className="navbar-brand" to="/">
           <bold>RMUSE.live</bold>
         </Link>
+        
 
         <RegisterLoginModal />
       </header>

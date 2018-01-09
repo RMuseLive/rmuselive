@@ -9,10 +9,9 @@ import {
 import button, { Tabs, Tab } from "react-bootstrap";
 import React, { Component } from "react";
 import agent from "../agent";
+// import ProfileScreen from "./screens/ProfileScreen";
 //connecting to user agent to login, now user,
 
-// import SignupSettings from"./components/User/Settings/SignupSettings";
-// import LoginSettings from "./components/User/Settings/LoginSettings";
 
 class RegisterLoginModal extends React.Component {
   constructor(props) {
@@ -51,7 +50,7 @@ class RegisterLoginModal extends React.Component {
         console.log("Signed-Up");
       })
       .then(payload =>
-        this.props.history.push(`/ProfileScreen/${payload.username}`)
+        this.props.history.push(`/username/${payload.username}`)
       )
       .catch(err => {
         console.log("SIGN UP ERROR", err);
@@ -65,7 +64,7 @@ class RegisterLoginModal extends React.Component {
         console.log(`look at the unique user heheheh ${payload.username}`);
       })
       .then(payload =>
-        this.props.history.push(`/ProfileScreen/${payload.username}`)
+        this.props.history.push(`/username/${payload.username}`)
       )
       .catch(err => {
         console.log("LOG IN ERROR", err);
@@ -121,7 +120,7 @@ class RegisterLoginModal extends React.Component {
                       this.setState({ Email: event.target.value })
                     }
                   />
-                  <input type="text" name="Email" onChange={this.ChangeEmail} />
+                  {/* <input type="text" name="Email" onChange={this.ChangeEmail} /> */}
                 </div>
                 <div>
                   <label htmlFor="Password">Password:</label>
@@ -131,7 +130,7 @@ class RegisterLoginModal extends React.Component {
                     onChange={this.ChangePassword}
                   />
                 </div>
-                <a href="ProfileScreen">
+                <a href="/">
                   {" "}
                   <button
                     type="button"
@@ -184,13 +183,16 @@ class RegisterLoginModal extends React.Component {
                     onChange={event => this.ChangePassword(event)}
                   />
                 </div>
-                <button
-                  type="button"
-                  className="btn btn-dark"
-                  onClick={this.SignUp}
-                >
-                  SignUp
-                </button>
+                <a href="/">
+                  {" "}
+                  <button
+                    type="button"
+                    className="btn btn-dark"
+                    onClick={this.Login}
+                  >
+                    SignUp
+                  </button>
+                </a>
               </Tab>
             </Tabs>
           </ModalBody>

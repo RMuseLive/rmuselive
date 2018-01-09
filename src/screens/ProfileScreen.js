@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 // import RegisterLoginModal from "./RegisterLoginModal";
 import { NavLink as Link } from "react-router-dom";
 import ReactFilestack from "filestack-react";
 import UserSetting from "./UserSettingScreen";
 
 import agent from "../agent";
+
 
 //filestack button moved from header
 class ProfileScreen extends Component {
@@ -51,8 +52,9 @@ class ProfileScreen extends Component {
                     <Link className="btn btn-primary" to="/logout">
                       Logout
                     </Link>
+                   <a href="/usersettingscreen">Settings</a>
                     <button className="btn btn-primary">Logout</button>
-
+                   
                     <ReactFilestack
                       apikey={"Av2OyyRf4Q16K5npkOJpBz"}
                       buttonText="FileStack Open"

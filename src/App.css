@@ -6,8 +6,8 @@
 }
 .App-footer {
   background-color: rgba(243, 240, 240, 0.671);
-  height: 305px;
-  padding: 80px;
+  height: 302px;
+  padding: 60px;
   color: rgb(2, 2, 2);
 }
 
@@ -20,7 +20,7 @@ body {
 }
 .search {
   position: relative;
-  left: 30px;
+  left: 150px;
   margin-top: -140px;
 }
 .social-section mt-2 {
@@ -61,4 +61,13 @@ body{
   height: 100%;
   width: 100%;
  
+}
+.form-group {
+  margin-left: 20em;
+  margin-right: 20em;
+  padding-top: 1em;
+}
+#update {
+  padding: 10px;
+  margin: 2em;
 }

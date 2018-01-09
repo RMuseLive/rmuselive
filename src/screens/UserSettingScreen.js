@@ -1,60 +1,77 @@
 import React, { Component } from "react";
 
-
 class UserSettingScreen extends Component {
-    state = {
-      image: "",
-      username: "",
-      bio: "",
-      email: "",
-      password: ""
-    };
-  
-    componentWillMount() {
-      if (this.props.currentUser) {
-        const cu = this.props.currentUser;
+  state = {
+    image: "",
+    username: "",
+    bio: "",
+    email: "",
+    password: ""
+  };
+
+  componentWillMount() {
+    if (this.props.currentUser) {
+      const cu = this.props.currentUser;
+      Object.assign(this.state, {
+        image: cu.image || "",
+        username: cu.username,
+        bio: cu.bio,
+        email: cu.email
+      });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentUser) {
+      const cu = nextProps.currentUser;
+      this.setState(
         Object.assign(this.state, {
           image: cu.image || "",
           username: cu.username,
           bio: cu.bio,
           email: cu.email
-        });
-      }
+        })
+      );
     }
+  }
+
+  handleInputChange = event => {
+    const targetName = event.target.name;
+    this.setState({
+      [targetName]: event.target.value
+    });
+  };
+
+  // submitForm = e => {
+  //   e.preventDefault();
+  //   const user = Object.assign({}, this.state);
+  //   if (user.password.length <= 0) {
+  //     delete user.password;
+  //   }
+  //   return this.props.onSubmitForm(user);
+  // };
   
-    componentWillReceiveProps(nextProps) {
-      if (nextProps.currentUser) {
-        const cu = nextProps.currentUser;
-        this.setState(
-          Object.assign(this.state, {
-            image: cu.image || "",
-            username: cu.username,
-            bio: cu.bio,
-            email: cu.email
-          })
-        );
+  componentDidMount() {
+    console.log(this)
+  }
+
+  handleSubmit(event) {
+    if (this.refs.titleInput !== '') {
+      event.preventDefault();
+      var asset = {
+        username: '',
+        bio: this.refs.titleInput.value,
+        password: '',
+        type: this.refs.typeInput.value
       }
+
+      return this.props.dispatch(asset)
     }
-  
-    handleInputChange = event => {
-      const targetName = event.target.name;
-      this.setState({
-        [targetName]: event.target.value
-      });
-    };
-  
-    submitForm = e => {
-      e.preventDefault();
-      const user = Object.assign({}, this.state);
-      if (user.password.length <= 0) {
-        delete user.password;
-      }
-      this.props.onSubmitForm(user);
-    };
-  
+  }
     render() {
       return (
         <form onSubmit={e => this.submitForm(e)}>
+        <h1>Tell your followers about you.</h1>
           <fieldset>
             <fieldset className="form-group">
               <input
@@ -113,7 +130,7 @@ class UserSettingScreen extends Component {
   
             <button
               className="btn btn-lg btn-primary pull-xs-right"
-              type="submit"
+              type="submit" id="update" 
               disabled={this.state.inProgress}
             >
               Update Settings
