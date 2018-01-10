@@ -41,10 +41,24 @@ class RegisterLoginModal extends React.Component {
 
   SignUp = event => {
     event.preventDefault();
+<<<<<<< Updated upstream
     agent.Auth
       .register(this.state.Username, this.state.Email, this.state.Password)
       .then(loggedInUser => {
         console.log("Signed-Up");
+=======
+    console.log("sign up");
+
+    const username = this.state.Username;
+    const email = this.state.Email;
+    const password = this.state.Password;
+    const userType = this.state.UserType;
+
+    agent.Auth.register(username, email, password, userType)
+      .then(payload => {
+        agent.setToken(payload.token);
+        window.location = `/ProfileScreen/${payload.user.username}`;
+>>>>>>> Stashed changes
       })
       .catch(err => {
         console.log(err);
@@ -56,9 +70,14 @@ class RegisterLoginModal extends React.Component {
     agent.Auth
       .login(this.state.Email, this.state.Password)
       .then(payload => {
+<<<<<<< Updated upstream
         console.log(`look at the unique user heheheh ${payload.username}`
       );
       
+=======
+        agent.setToken(payload.token);
+        window.location = `/ProfileScreen/${payload.user.username}`;
+>>>>>>> Stashed changes
       })
       .catch(err => {
         console.log(err);

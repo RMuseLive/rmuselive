@@ -47,5 +47,6 @@ export default {
   requests,
   setToken: _token => {
     token = _token;
-  }
+  },
+  token
 };
