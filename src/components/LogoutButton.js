@@ -2,10 +2,9 @@ import React, { Component, PropTypes } from "react";
 import agent from "../agent";
 //i believe tis must connect to agent because agent has token
 
-class Logout extends Component {
+class LogoutButton extends Component {
   handleLogOut = () => {
-    agent.deleteToken();
-    this.props.router.push("/");
+    window.location = "/";
   };
 
   render() {
@@ -18,8 +17,8 @@ class Logout extends Component {
   }
 }
 
-Logout.propTypes = {
+LogoutButton.propTypes = {
   router: PropTypes.object.isRequired
 };
 
-export default Logout;
+export default LogoutButton;

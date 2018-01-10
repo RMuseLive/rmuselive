@@ -10,7 +10,6 @@ import Support from "./screens/Support";
 import ProfileScreen from "./screens/ProfileScreen";
 import FAQ from "./screens/FAQ";
 import Logout from "./components/LogoutButton";
-import Login from "./components/LoginButton";
 import UserSettingScreen from "./screens/UserSettingScreen";
 import Calendar from "./components/calendar";
 import agent from "./agent";
@@ -30,8 +29,7 @@ class App extends Component {
               <Route path="/support" component={Support} />
               <Route path="/ProfileScreen" component={ProfileScreen} />
               <Route path="/faq" component={FAQ} />
-              <Route path="/UserSettingScreen" component={UserSettingScreen}/>
-              <Route path="/login" component={Login} />
+              <Route path="/UserSettingScreen" component={UserSettingScreen} />
               <Route path="/logout" component={Logout} />
 
               <Route path="/calendar" component={Calendar} />

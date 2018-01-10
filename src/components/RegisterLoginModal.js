@@ -12,7 +12,6 @@ import agent from "../agent";
 // import ProfileScreen from "./screens/ProfileScreen";
 //connecting to user agent to login, now user,
 
-
 class RegisterLoginModal extends React.Component {
   constructor(props) {
     super(props);
@@ -41,16 +40,20 @@ class RegisterLoginModal extends React.Component {
 
   SignUp = event => {
     event.preventDefault();
-    agent.Auth.register(
-      this.state.Username,
-      this.state.Email,
-      this.state.Password
-    )
+    console.log("sign up");
+
+    const username = this.state.Username;
+    const email = this.state.Email;
+    const password = this.state.Password;
+    const userType = this.state.UserType;
+
+    agent.Auth.register(username, email, password, userType)
       .then(loggedInUser => {
         console.log("Signed-Up");
       })
-      .then(payload =>
-        this.props.history.push(`/username/${payload.username}`)
+      .then(
+        payload => (window.location = `/ProfileScreen/${payload.user.username}`)
+        // this.props.history.push("/ProfileScreen")
       )
       .catch(err => {
         console.log("SIGN UP ERROR", err);
@@ -59,15 +62,16 @@ class RegisterLoginModal extends React.Component {
 
   LogIn = event => {
     event.preventDefault();
-    agent.Auth.login(this.state.Email, this.state.Password)
+    const email = this.state.Email;
+    const password = this.state.Password;
+
+    agent.Auth.login(email, password)
       .then(payload => {
-        console.log(`look at the unique user heheheh ${payload.username}`);
+        console.log(payload);
+        window.location = `/ProfileScreen/${payload.user.username}`;
       })
-      .then(payload =>
-        this.props.history.push(`/username/${payload.username}`)
-      )
       .catch(err => {
-        console.log("LOG IN ERROR", err);
+        console.log("LOG IN ERROR TEST", err);
       });
   };
 
@@ -91,8 +95,11 @@ class RegisterLoginModal extends React.Component {
     this.setState({ Password: e.target.value });
   }
 
+  ChangeUserType(e) {
+    this.setState({ UserType: e.target.value });
+  }
+
   render() {
-    console.log("LOGIN MODAL STATE", this.state);
     return (
       <div>
         <button onClick={this.openModal} style={{ height: 40, width: 150 }}>
@@ -130,16 +137,13 @@ class RegisterLoginModal extends React.Component {
                     onChange={this.ChangePassword}
                   />
                 </div>
-                <a href="/">
-                  {" "}
-                  <button
-                    type="button"
-                    className="btn btn-dark"
-                    onClick={this.Login}
-                  >
-                    Login
-                  </button>
-                </a>
+                <button
+                  type="button"
+                  className="btn btn-dark"
+                  onClick={event => this.LogIn(event)}
+                >
+                  Login
+                </button>
               </Tab>
               <Tab
                 eventKey={2}
@@ -183,12 +187,20 @@ class RegisterLoginModal extends React.Component {
                     onChange={event => this.ChangePassword(event)}
                   />
                 </div>
+                <div>
+                  <label htmlFor="UserType">User Type (artist, follower)</label>
+                  <input
+                    type="text"
+                    name="UserType"
+                    onChange={event => this.ChangeUserType(event)}
+                  />
+                </div>
                 <a href="/">
                   {" "}
                   <button
-                    type="button"
+                    type="submit"
                     className="btn btn-dark"
-                    onClick={this.Login}
+                    onClick={event => this.SignUp(event)}
                   >
                     SignUp
                   </button>
