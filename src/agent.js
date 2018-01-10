@@ -1,8 +1,8 @@
-import superagentPromise from 'superagent-promise';
-import _superagent from 'superagent';
+import superagentPromise from "superagent-promise";
+import _superagent from "superagent";
 
 const superagent = superagentPromise(_superagent, global.Promise);
-const API_ROOT = 'https://rmuse.live/api/1';
+const API_ROOT = "https://rmuse.live/api/1";
 
 let token = null;
 const tokenPlugin = req => {
@@ -10,6 +10,7 @@ const tokenPlugin = req => {
     req.set("Authorization", `Token ${token}`);
   }
 };
+
 const responseBody = res => res.body;
 const requests = {
   get: url =>
@@ -36,10 +37,9 @@ const requests = {
 
 const Auth = {
   current: () => requests.get("/user"),
-  login: (email, password) =>
-    requests.post("/login", {email, password}),
-  register: (username, email, password) =>
-    requests.post("/user", {username, email, password})
+  login: (email, password) => requests.post("/login", { email, password }),
+  register: (username, email, password, type) =>
+    requests.post("/user", { username, email, password, type })
 };
 
 export default {

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 // import RegisterLoginModal from "./RegisterLoginModal";
+import { NavLink as Link } from "react-router-dom";
 import ReactFilestack from "filestack-react";
+import UserSetting from "./UserSettingScreen";
 
+import agent from "../agent";
 
 //filestack button moved from header
 class ProfileScreen extends Component {
-<<<<<<< Updated upstream
-=======
   state = {
     userImages: null,
     userInfo: null
@@ -34,29 +35,15 @@ class ProfileScreen extends Component {
           console.log(JSON.stringify(error))
         })
     }
-
-
-
   };
 
->>>>>>> Stashed changes
   render() {
+    const { userImages, userInfo } = this.state;
+    console.log("PROFILE SCREEN STATE", userImages);
     return (
-      <header className="Header">
       <div>
-<<<<<<< Updated upstream
-      <text>User Page</text>
-    </div>
-    
-        <ReactFilestack
-          apikey={"Av2OyyRf4Q16K5npkOJpBz"}
-          buttonText="FileStack Open"
-          buttonClass="FileStack"
-          // options={options}
-          onSuccess={this.yourCallbackFunction}
-        />
-      </header>
-=======
+        <text>User Page</text>
+
         {userImages && (
           <div>
             <text>User Page</text>
@@ -82,9 +69,36 @@ class ProfileScreen extends Component {
           </div>
         )}
       </div>
->>>>>>> Stashed changes
     );
   }
 }
 
 export default ProfileScreen;
+
+// {this.state.userInfo.map(a => {
+//   //change the tags to load the user information given in the response (CHECK YOUR CONSOLE LOGS)
+//   //IF THESE ARE UNDEFINED, CHANGE THE SECOND PART OF THE NAME (a.somethingElse)
+//   <div>
+//     <p>{a.username}</p>
+//     <p>{a.firstName}</p>
+//     <p>{a.lastName}</p>
+//   </div>;
+// })}
+//--------------------------------------
+
+// <div className="card profile">
+//                 <div className="card-block">
+//                   <img className="img-circle avatar" src={user.data.avatar} />
+//                   <h4 className="card-title">Hey{user.data.nickname}!</h4>
+//                   <div className="card-text">
+//                     <p>You have permission to perform the following:</p>
+//                     <ul className="permissions">
+//                       <li>Create your Page</li>
+//                       <li>Edit your Profile</li>
+//                       <li>Follow / unfollow other User</li>
+//                     </ul>
+//                     <Link className="btn btn-primary" to="/logout">
+//                       Logout
+//                     </Link>
+//                     <a href="/usersettingscreen">Settings</a>
+//                     <button className="btn btn-primary">Logout</button>

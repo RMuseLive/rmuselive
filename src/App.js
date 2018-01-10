@@ -9,17 +9,18 @@ import Contact from "./screens/Contact";
 import Support from "./screens/Support";
 import ProfileScreen from "./screens/ProfileScreen";
 import FAQ from "./screens/FAQ";
-
+import Logout from "./components/LogoutButton";
+import UserSettingScreen from "./screens/UserSettingScreen";
 import Calendar from "./components/calendar";
-
+import agent from "./agent";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        {/* <Navbar /> */}
-        <Header className="App-header" />
-        <Router>
+      <Router>
+        <div className="App">
+          {/* <Navbar /> */}
+          <Header className="App-header" history={this.props.history} />
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -28,14 +29,15 @@ class App extends Component {
               <Route path="/support" component={Support} />
               <Route path="/ProfileScreen" component={ProfileScreen} />
               <Route path="/faq" component={FAQ} />
+              <Route path="/UserSettingScreen" component={UserSettingScreen} />
+              <Route path="/logout" component={Logout} />
 
               <Route path="/calendar" component={Calendar} />
-
             </Switch>
           </div>
-        </Router>
-        <Footer className="App-footer" />
-      </div>
+          <Footer className="App-footer" />
+        </div>
+      </Router>
     );
   }
 }
