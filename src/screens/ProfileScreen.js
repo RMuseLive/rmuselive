@@ -7,19 +7,20 @@ import UserSetting from "./UserSettingScreen";
 
 import agent from "../agent";
 
-
 //filestack button moved from header
 class ProfileScreen extends Component {
   state = {
-    user: null
+    userImages: null,
+    userInfo: null
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const thisPath = window.location.href.split("/");
     const username = thisPath[thisPath.length - 1];
+
     agent.requests
-      .get(`${username}`)
-      .then(res => this.setState({ user: res }))
+      .get(`/user/${username}`)
+      .then(res => this.setState({ userImages: res }))
       .catch(error => {
         console.log("PROFILE SCREEN FETCH ERROR", error);
       });
@@ -30,61 +31,65 @@ class ProfileScreen extends Component {
   };
 
   render() {
-    const user = this.state.user;
-    console.log("PROFILE SCREEN STATE", user);
+    const { userImages, userInfo } = this.state;
+    console.log("PROFILE SCREEN STATE", userImages);
     return (
       <div>
-        {user && (
+        {userImages && (
           <div>
-            <header className="Header">
-              <text>User Page</text>
-              <div className="card profile">
-                <div className="card-block">
-                  <img className="img-circle avatar" src={user.data.avatar} />
-                  <h4 className="card-title">Hey{user.data.nickname}!</h4>
-                  <div className="card-text">
-                    <p>You have permission to perform the following:</p>
-                    <ul className="permissions">
-                      <li>Create your Page</li>
-                      <li>Edit your Profile</li>
-                      <li>Follow / unfollow other User</li>
-                    </ul>
-                    <Link className="btn btn-primary" to="/logout">
-                      Logout
-                    </Link>
-                   <a href="/usersettingscreen">Settings</a>
-                    <button className="btn btn-primary">Logout</button>
-                   
-                    <ReactFilestack
-                      apikey={"Av2OyyRf4Q16K5npkOJpBz"}
-                      buttonText="FileStack Open"
-                      buttonClass="FileStack"
-                      // options={options}
-                      onSuccess={() => this.handleFilestackSuccess()}
-                    />
-                  </div>
+            <text>User Page</text>
+
+            {this.state.userImages.map(a => {
+              //once images are in the database, change the p tag to an img tag
+              //set the source to the image source given in the response (it will be something like a.imageUrl)
+              //<img src={a.imageUrl} />
+              return (
+                <div>
+                  <h1>User Images will go here</h1>
+                  <p>{a.uri}</p>
                 </div>
-              </div>
-            </header>
+              );
+            })}
+            <ReactFilestack
+              apikey={"Av2OyyRf4Q16K5npkOJpBz"}
+              buttonText="FileStack Open"
+              buttonClass="FileStack"
+              // options={options}
+              onSuccess={() => this.handleFilestackSuccess()}
+            />
           </div>
         )}
       </div>
     );
   }
 }
-// Profile.propTypes = {
-//   user: PropTypes.object.isRequired
-// };
-
-// Profile.defaultProps ={
-//   user: {
-//     id: 1,
-//     data: {
-//       nickname: '',
-//       avatar: ""
-
-//     }
-//   }
-// };
 
 export default ProfileScreen;
+
+// {this.state.userInfo.map(a => {
+//   //change the tags to load the user information given in the response (CHECK YOUR CONSOLE LOGS)
+//   //IF THESE ARE UNDEFINED, CHANGE THE SECOND PART OF THE NAME (a.somethingElse)
+//   <div>
+//     <p>{a.username}</p>
+//     <p>{a.firstName}</p>
+//     <p>{a.lastName}</p>
+//   </div>;
+// })}
+//--------------------------------------
+
+// <div className="card profile">
+//                 <div className="card-block">
+//                   <img className="img-circle avatar" src={user.data.avatar} />
+//                   <h4 className="card-title">Hey{user.data.nickname}!</h4>
+//                   <div className="card-text">
+//                     <p>You have permission to perform the following:</p>
+//                     <ul className="permissions">
+//                       <li>Create your Page</li>
+//                       <li>Edit your Profile</li>
+//                       <li>Follow / unfollow other User</li>
+//                     </ul>
+//                     <Link className="btn btn-primary" to="/logout">
+//                       Logout
+//                     </Link>
+//                     <a href="/usersettingscreen">Settings</a>
+//                     <button className="btn btn-primary">Logout</button>
