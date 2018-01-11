@@ -4,7 +4,7 @@ class App extends Component {
     render() {
       return ( 
           <div>
-              <a href="/" className="text-justify">Back to Home</a> 
+               
                 <Grid><h2 className="text-left">Calendar of Events</h2>
             <Row>
               <Col sm={4}>

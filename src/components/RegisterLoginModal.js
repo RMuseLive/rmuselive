@@ -58,9 +58,18 @@ class RegisterLoginModal extends React.Component {
         }
       )
       .catch(err => {
+
+        if(err.status === 500){
+          this.SignUp(event);
+        } else {
         console.log("SIGN UP ERROR", err);
+      }
       });
-  };
+
+};
+
+
+
 
   LogIn = event => {
     event.preventDefault();
@@ -119,7 +128,9 @@ class RegisterLoginModal extends React.Component {
                 title="Login"
                 style={{ display: "flex", flexDirection: "column" }}
               >
-                <h1>Login</h1>
+
+                <h1 className="display-4">Login</h1>
+
                 <div>
                   <label htmlFor="Email">Email:</label>
                   <input
@@ -152,7 +163,9 @@ class RegisterLoginModal extends React.Component {
                 title="Sign Up"
                 style={{ display: "flex", flexDirection: "column" }}
               >
-                <h1>Sign Up</h1>
+
+                <h1 className="display-4">Sign Up</h1>
+
                 <div>
                   <label htmlFor="Username">Username:</label>
                   <input
@@ -190,15 +203,17 @@ class RegisterLoginModal extends React.Component {
                   />
                 </div>
                 <div>
-                  <label htmlFor="UserType">User Type (artist, follower)</label>
-                  <input
-                    type="text"
-                    name="UserType"
-                    onChange={event => this.ChangeUserType(event)}
-                  />
+
+                      
+                  <label htmlFor="UserType">User Type</label>
+                  
                 </div>
-                <a href="/">
-                  {" "}
+                {/* <a href="/"> */}
+                <div className="form-check">
+    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+    <label className="form-check-label" for="exampleCheck1">Artist</label>
+  </div>
+
                   <button
                     type="submit"
                     className="btn btn-dark"
@@ -206,7 +221,9 @@ class RegisterLoginModal extends React.Component {
                   >
                     SignUp
                   </button>
-                </a>
+
+                {/* </a> */}
+
               </Tab>
             </Tabs>
           </ModalBody>

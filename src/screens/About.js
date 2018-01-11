@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     return (
       <div id="team" className="About">
-      <a href="/" className="text-justify">Back to Home</a>
+      
         <Grid>
           <Row>
             <h1 className="title mb-4 font-bold">Meet the Team</h1>

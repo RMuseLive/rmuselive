@@ -6,7 +6,7 @@ class Contact extends Component {
   render() {
     return (
       <div className="Contact">
-     <a href="/" className="text-justify">Back to Home</a>
+    
         <h5 className="title mb-4 font-bold">WHO WE ARE</h5>
         <p>
           This is our contact page. Here you can contact a member of the team.

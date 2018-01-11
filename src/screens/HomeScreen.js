@@ -43,7 +43,11 @@ Maybe change the navbar to navigate around the page.*/
     
     </div>
     </form>
+
+    </div> 
+
     </div>
+
     <Grid>
     <h2 className="text-left">What's New</h2>
     <Row className="row-1">

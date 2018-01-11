@@ -5,9 +5,9 @@ import agent from "../agent";
 
 import UserSettings from "./UserSettingScreen";
 
-const mapStateToProps = state => ({
-  ...state.settings,
-  currentUser: state.common.currentUser
+const mapStateToProps = appState => ({
+  ...appState.settings,
+  currentUser: appState.common.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
