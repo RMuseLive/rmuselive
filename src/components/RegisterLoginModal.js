@@ -128,7 +128,7 @@ class RegisterLoginModal extends React.Component {
               <Tab
                 eventKey={1}
                 title="Login"
-                style={{ display: "flex", flexDirection: "column" }}
+                style={{ flexDirection: "column" }}
               >
 
                 <h1 className="display-4">Login</h1>
@@ -163,7 +163,7 @@ class RegisterLoginModal extends React.Component {
               <Tab
                 eventKey={2}
                 title="Sign Up"
-                style={{ display: "flex", flexDirection: "column" }}
+                style={{ flexDirection: "column" }}
               >
 
                 <h1 className="display-4">Sign Up</h1>

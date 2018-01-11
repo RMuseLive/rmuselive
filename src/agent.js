@@ -7,7 +7,7 @@ const API_ROOT = "https://rmuse.live/api/1";
 let token = null;
 const tokenPlugin = req => {
   if (token) {
-    req.set("Authorization", `Token ${token}`);
+    req.set("Authorization", token);
   }
 };
 

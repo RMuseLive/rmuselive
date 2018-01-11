@@ -9,22 +9,24 @@ import agent from "../agent";
 
 //filestack button moved from header
 class ProfileScreen extends Component {
-  state = {
-    userImages: null,
-    userInfo: null
-  };
+  constructor() {
+    super()
+    this.state = {
+      following: null,
+      userImages: null
+    };
+  }
 
   componentWillMount() {
     const thisPath = window.location.href.split("/");
     const username = thisPath[thisPath.length - 1];
     this.state.token = window.localStorage.getItem("jwt");
+    console.log(username);
 
     agent.setToken(this.state.token);
     agent.requests
       .get(`/user/${username}`)
-
       .then(res => this.setState({following: res.following, userImages: res.images }))
-
       .catch(error => {
         console.log("PROFILE SCREEN FETCH ERROR", error);
       });
@@ -63,30 +65,29 @@ class ProfileScreen extends Component {
             <text>User Page</text>
             
 
-            { this.followbutton }
+            { this.followbutton() }
               {this.state.userImages.map(a => {
 
 
               //once images are in the database, change the p tag to an img tag
               //set the source to the image source given in the response (it will be something like a.imageUrl)
-              //<img src={a.imageUrl} />
               return (
                 <div>
                   <h1>User Images will go here</h1>
-                  <p>{a.uri}</p>
+                  <img src={a.uri} />
                 </div>
               );
             })}
-            <ReactFilestack
-              apikey={"Av2OyyRf4Q16K5npkOJpBz"}
-              buttonText="FileStack Open"
-              buttonClass="FileStack"
-
-              // options={options}
-              onSuccess={blob => this.handleFilestackSuccess(blob)}
-            />
           </div>
         )}
+        <ReactFilestack
+          apikey={"Av2OyyRf4Q16K5npkOJpBz"}
+          buttonText="FileStack Open"
+          buttonClass="FileStack"
+
+          // options={options}
+          onSuccess={blob => this.handleFilestackSuccess(blob)}
+        />
       </div>
     );
   }

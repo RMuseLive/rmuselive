@@ -34,12 +34,11 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/support" component={Support} />
-              <Route path="/username" component={ProfileScreen} />
               <Route path="/faq" component={FAQ} />
               <Route path="/UserSettingScreen" component={UserSettingScreen} />
               <Route path="/logout" component={Logout} />
-
               <Route path="/calendar" component={Calendar} />
+              <Route path="/:username" component={ProfileScreen} />
             </Switch>
           </div>
           <Footer className="App-footer" />
