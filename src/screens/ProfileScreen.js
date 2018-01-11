@@ -28,8 +28,16 @@ class ProfileScreen extends Component {
       });
   }
 
-  handleFilestackSuccess = () => {
-    alert("Filestack success!");
+  handleFilestackSuccess = blob => {
+    for (var file of blob.filesUploaded) {
+      console.log(agent.token);
+      agent.setToken(window.localStorage.getItem("jwt"));
+      agent.requests
+        .post("/media", {uri: file.url, type: file.mimetype})
+        .catch(error => {
+          console.log(JSON.stringify(error))
+        })
+    }
   };
 
   followbutton =() => {
@@ -46,8 +54,6 @@ class ProfileScreen extends Component {
     console.log("PROFILE SCREEN STATE", userImages);
     return (
       <div>
-
-    
         {userImages && (
           <div>
             <text>User Page</text>
@@ -73,7 +79,7 @@ class ProfileScreen extends Component {
               buttonClass="FileStack"
 
               // options={options}
-              onSuccess={() => this.handleFilestackSuccess()}
+              onSuccess={blob => this.handleFilestackSuccess(blob)}
             />
           </div>
         )}

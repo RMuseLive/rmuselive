@@ -40,7 +40,6 @@ class RegisterLoginModal extends React.Component {
 
   SignUp = event => {
     event.preventDefault();
-    console.log("sign up");
 
     const username = this.state.Username;
     const email = this.state.Email;
@@ -48,12 +47,15 @@ class RegisterLoginModal extends React.Component {
     const userType = this.state.UserType;
 
     agent.Auth.register(username, email, password, userType)
-      .then(loggedInUser => {
-        console.log("Signed-Up");
+      .then(payload => {
+        window.location = `/ProfileScreen/${payload.user.username}`;
       })
       .then(
-        payload => (window.location = `/ProfileScreen/${payload.user.username}`)
-        // this.props.history.push("/ProfileScreen")
+        payload => {
+          window.location = `/ProfileScreen/${payload.user.username}`;
+          this.props.history.push("/ProfileScreen");
+          window.localStorage.setItem("jwt", payload.token);
+        }
       )
       .catch(err => {
 
@@ -76,7 +78,7 @@ class RegisterLoginModal extends React.Component {
 
     agent.Auth.login(email, password)
       .then(payload => {
-        console.log(payload);
+        window.localStorage.setItem("jwt", payload.token);
         window.location = `/ProfileScreen/${payload.user.username}`;
       })
       .catch(err => {
