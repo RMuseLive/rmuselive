@@ -20,14 +20,14 @@ class App extends Component {
       <Router>
         <div className="App">
           {/* <Navbar /> */}
-          <Header className="App-header" history={this.props.history} />
+          <Header className="App-header"  />
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/support" component={Support} />
-              <Route path="/ProfileScreen" component={ProfileScreen} />
+              <Route path="/username" component={ProfileScreen} />
               <Route path="/faq" component={FAQ} />
               <Route path="/UserSettingScreen" component={UserSettingScreen} />
               <Route path="/logout" component={Logout} />

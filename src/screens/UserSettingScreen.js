@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class UserSettingScreen extends Component {
-  state = {
+  State = {
     image: "",
     username: "",
     bio: "",
@@ -12,7 +12,7 @@ class UserSettingScreen extends Component {
   componentWillMount() {
     if (this.props.currentUser) {
       const cu = this.props.currentUser;
-      Object.assign(this.state, {
+      Object.assign(this.appState, {
         image: cu.image || "",
         username: cu.username,
         bio: cu.bio,
@@ -24,8 +24,8 @@ class UserSettingScreen extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser) {
       const cu = nextProps.currentUser;
-      this.setState(
-        Object.assign(this.state, {
+      this.setAppState(
+        Object.assign(this.appState, {
           image: cu.image || "",
           username: cu.username,
           bio: cu.bio,
@@ -37,7 +37,7 @@ class UserSettingScreen extends Component {
 
   handleInputChange = event => {
     const targetName = event.target.name;
-    this.setState({
+    this.setAppState({
       [targetName]: event.target.value
     });
   };
