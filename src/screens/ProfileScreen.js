@@ -29,6 +29,7 @@ class ProfileScreen extends Component {
   handleFilestackSuccess = blob => {
     for (var file of blob.filesUploaded) {
       console.log(agent.token);
+      agent.setToken(window.localStorage.getItem("jwt"));
       agent.requests
         .post("/media", {uri: file.url, type: file.mimetype})
         .catch(error => {
