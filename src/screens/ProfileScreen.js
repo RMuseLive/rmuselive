@@ -20,7 +20,9 @@ class ProfileScreen extends Component {
 
     agent.requests
       .get(`/user/${username}`)
+
       .then(res => this.setState({following: res.following, userImages: res.images }))
+
       .catch(error => {
         console.log("PROFILE SCREEN FETCH ERROR", error);
       });
@@ -29,6 +31,7 @@ class ProfileScreen extends Component {
   handleFilestackSuccess = () => {
     alert("Filestack success!");
   };
+
   followbutton =() => {
     if (this.state.token) {
       if (this.state.following) {
@@ -37,11 +40,13 @@ class ProfileScreen extends Component {
       }
       }; 
  
+
   render() {
     const { userImages, userInfo } = this.state;
     console.log("PROFILE SCREEN STATE", userImages);
     return (
       <div>
+
     
         {userImages && (
           <div>
@@ -50,6 +55,8 @@ class ProfileScreen extends Component {
 
             { this.followbutton }
               {this.state.userImages.map(a => {
+
+
               //once images are in the database, change the p tag to an img tag
               //set the source to the image source given in the response (it will be something like a.imageUrl)
               //<img src={a.imageUrl} />
@@ -64,6 +71,7 @@ class ProfileScreen extends Component {
               apikey={"Av2OyyRf4Q16K5npkOJpBz"}
               buttonText="FileStack Open"
               buttonClass="FileStack"
+
               // options={options}
               onSuccess={() => this.handleFilestackSuccess()}
             />
@@ -102,4 +110,5 @@ export default ProfileScreen;
 //                       Logout
 //                     </Link>
 //                     <a href="/usersettingscreen">Settings</a>
+
 //                     <button className="btn btn-primary">Logout</button>

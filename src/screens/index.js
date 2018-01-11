@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-// import agent from "../../agent";
-// import ListErrors from "../ListErrors";
-import SettingsForm from "./AccountSettings";
+import agent from "../agent";
 
-const mapStateToProps = state => ({
-  ...state.settings,
-  currentUser: state.common.currentUser
+import UserSettings from "./UserSettingScreen";
+
+const mapStateToProps = appState => ({
+  ...appState.settings,
+  currentUser: appState.common.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: "SETTINGS_SAVED", payload: agent.Auth.save(user) })
 });
 
-class Settings extends Component {
+class UserSettings extends Component {
   render() {
     return (
       <div className="settings-page">
@@ -25,7 +25,7 @@ class Settings extends Component {
             <div className="col-md-6 offset-md-3 col-xs-12">
               <h1 className="text-xs-center">Your Settings</h1>
 
-              {/* <ListErrors errors={this.props.errors} /> */}
+             
               <SettingsForm
                 currentUser={this.props.currentUser}
                 onSubmitForm={this.props.onSubmitForm}
@@ -36,7 +36,7 @@ class Settings extends Component {
                 className="btn btn-outline-danger"
                 onClick={this.props.onClickLogout}
               >
-                Or logout.
+                Or click here to logout.
               </button>
             </div>
           </div>
