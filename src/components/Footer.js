@@ -13,7 +13,7 @@ class Footer extends Component {
              
               <h5 className="title mb-4 font-bold">WHO WE ARE</h5>
               <p>
-               We are an organiztion that helps Artist of all kinds succeed.
+               We are an Organization that helps Artist of all kinds succeed.
               </p>
             </Col>
            
