@@ -17,7 +17,9 @@ class ProfileScreen extends Component {
   componentWillMount() {
     const thisPath = window.location.href.split("/");
     const username = thisPath[thisPath.length - 1];
+    this.state.token = window.localStorage.getItem("jwt");
 
+    agent.setToken(this.state.token);
     agent.requests
       .get(`/user/${username}`)
 
@@ -43,11 +45,13 @@ class ProfileScreen extends Component {
   followbutton =() => {
     if (this.state.token) {
       if (this.state.following) {
-        <button>unfollow</button>} else{<button>follow</button>}
+        return <button>Unfollow</button>;
       } else {
+        return <button>Follow</button>;
       }
-      }; 
- 
+    } else {
+    }
+  };
 
   render() {
     const { userImages, userInfo } = this.state;
