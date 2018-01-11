@@ -1,6 +1,16 @@
 import React from 'react';
 import RegisterLoginModal from "./RegisterLoginModal";
 import LogoutButton from './LogoutButton';
+
+const LoginOut = () => {
+  const token = window.localStorage.getItem("jwt");
+  if (token) {
+    return <LogoutButton />;
+  } else {
+    return <RegisterLoginModal />;
+  }
+};
+
 export default  () => {
     return (
 
@@ -22,8 +32,7 @@ export default  () => {
         <a className="nav-link disabled" href="#">Disabled</a>
       </li> */}
       <li>
-      <LogoutButton />
-      <RegisterLoginModal  />
+        <LoginOut/>
       </li>
     
     </ul>

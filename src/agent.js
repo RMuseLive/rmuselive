@@ -38,8 +38,8 @@ const requests = {
 const Auth = {
   current: () => requests.get("/user"),
   login: (email, password) => requests.post("/login", { email, password }),
-  register: (username, email, password, type) =>
-    requests.post("/user", { username, email, password, type })
+  register: (username, email, firstname, lastname, password, artist) =>
+    requests.post("/user", { username, email, firstname, lastname, password, artist })
 };
 
 export default {

@@ -25,6 +25,7 @@ class RegisterLoginModal extends React.Component {
     this.ChangeUsername = this.ChangeUsername.bind(this);
     this.ChangeEmail = this.ChangeEmail.bind(this);
     this.ChangePassword = this.ChangePassword.bind(this);
+    this.ChangeUserType = this.ChangeUserType.bind(this);
   }
   openModal = () => {
     this.setState({
@@ -41,24 +42,25 @@ class RegisterLoginModal extends React.Component {
   SignUp = event => {
     event.preventDefault();
 
+    const firstname = this.state.Firstname;
+    const lastname = this.state.Lastname;
     const username = this.state.Username;
     const email = this.state.Email;
     const password = this.state.Password;
-    const userType = this.state.UserType;
+    const artist = this.state.artist;
 
-    agent.Auth.register(username, email, password, userType)
+    agent.Auth.register(username, email, firstname, lastname, password, artist)
       .then(payload => {
         window.location = `/ProfileScreen/${payload.user.username}`;
       })
       .then(
         payload => {
+          window.localStorage.setItem("jwt", payload.token);
           window.location = `/ProfileScreen/${payload.user.username}`;
           this.props.history.push("/ProfileScreen");
-          window.localStorage.setItem("jwt", payload.token);
         }
       )
       .catch(err => {
-
         if(err.status === 500){
           this.SignUp(event);
         } else {
@@ -107,7 +109,7 @@ class RegisterLoginModal extends React.Component {
   }
 
   ChangeUserType(e) {
-    this.setState({ UserType: e.target.value });
+    this.setState({ Artist: e.target.value });
   }
 
   render() {
@@ -210,7 +212,7 @@ class RegisterLoginModal extends React.Component {
                 </div>
                 {/* <a href="/"> */}
                 <div className="form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+    <input type="checkbox" name="artist" onChange={event => this.ChangeUserType(event)}/>
     <label className="form-check-label" for="exampleCheck1">Artist</label>
   </div>
 

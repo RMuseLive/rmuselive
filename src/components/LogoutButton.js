@@ -4,6 +4,7 @@ import agent from "../agent";
 
 class LogoutButton extends Component {
   handleLogOut = () => {
+    window.localStorage.setItem("jwt", "");
     window.location = "/";
   };
 
