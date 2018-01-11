@@ -54,6 +54,7 @@ class ProfileScreen extends Component {
               apikey={"Av2OyyRf4Q16K5npkOJpBz"}
               buttonText="FileStack Open"
               buttonClass="FileStack"
+              className="filestack"
               // options={options}
               onSuccess={() => this.handleFilestackSuccess()}
             />
