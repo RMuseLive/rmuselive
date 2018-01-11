@@ -12,8 +12,10 @@ class Footer extends Component {
             <Col sm={3}>
              
               <h5 className="title mb-4 font-bold">WHO WE ARE</h5>
+
               <p className="display-3">
                We are an organiztion that helps Artist of all kinds succeed.
+
               </p>
             </Col>
            

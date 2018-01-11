@@ -56,9 +56,18 @@ class RegisterLoginModal extends React.Component {
         // this.props.history.push("/ProfileScreen")
       )
       .catch(err => {
+
+        if(err.status === 500){
+          this.SignUp(event);
+        } else {
         console.log("SIGN UP ERROR", err);
+      }
       });
-  };
+
+};
+
+
+
 
   LogIn = event => {
     event.preventDefault();
@@ -117,7 +126,9 @@ class RegisterLoginModal extends React.Component {
                 title="Login"
                 style={{ display: "flex", flexDirection: "column" }}
               >
+
                 <h1 className="display-4">Login</h1>
+
                 <div>
                   <label htmlFor="Email">Email:</label>
                   <input
@@ -150,7 +161,9 @@ class RegisterLoginModal extends React.Component {
                 title="Sign Up"
                 style={{ display: "flex", flexDirection: "column" }}
               >
+
                 <h1 className="display-4">Sign Up</h1>
+
                 <div>
                   <label htmlFor="Username">Username:</label>
                   <input
@@ -188,6 +201,8 @@ class RegisterLoginModal extends React.Component {
                   />
                 </div>
                 <div>
+
+                      
                   <label htmlFor="UserType">User Type</label>
                   
                 </div>
@@ -196,6 +211,7 @@ class RegisterLoginModal extends React.Component {
     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
     <label className="form-check-label" for="exampleCheck1">Artist</label>
   </div>
+
                   <button
                     type="submit"
                     className="btn btn-dark"
@@ -203,7 +219,9 @@ class RegisterLoginModal extends React.Component {
                   >
                     SignUp
                   </button>
+
                 {/* </a> */}
+
               </Tab>
             </Tabs>
           </ModalBody>
