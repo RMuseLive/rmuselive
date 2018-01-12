@@ -28,7 +28,7 @@ const requests = {
       .post(`${API_ROOT}${url}`, body)
       .use(tokenPlugin)
       .then(responseBody),
-  del: url =>
+  delete: url =>
     superagent
       .del(`${API_ROOT}${url}`)
       .use(tokenPlugin)

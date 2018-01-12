@@ -35,13 +35,26 @@ class ProfileScreen extends Component {
       });
   }
 
+  followUser = () => {
+    agent.setToken(this.state.token);
+    agent.requests
+      .post(`/user/${this.props.match.params.username}/follow`)
+      .then(res => window.location = `/${this.props.match.params.username}`);
+  };
+
+  unFollowUser = () => {
+    agent.setToken(this.state.token);
+    agent.requests
+      .delete(`/user/${this.props.match.params.username}/follow`)
+      .then(res => window.location = `/${this.props.match.params.username}`);
+  };
 
   followbutton = () => {
     if (this.props.match.params.username !== this.state.currentUser.username) {
       if (this.state.following) {
-        return <button>Unfollow</button>;
+        return <button onClick={this.unFollowUser}>Unfollow</button>;
       } else {
-        return <button>Follow</button>;
+        return <button onClick={this.followUser}>Follow</button>;
       }
     } else {
     }
