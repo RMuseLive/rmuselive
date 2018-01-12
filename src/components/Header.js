@@ -10,7 +10,8 @@ import logo from "../IMGs/logo/rmuse.png";
 const LoginOut = () => {
   const token = window.localStorage.getItem("jwt");
   if (token) {
-    return <LogoutButton/>;
+    const user = JSON.parse(window.localStorage.getItem("user"));
+    return <LogoutButton user={user}/>;
   } else {
     return <RegisterLoginModal/>;
   }

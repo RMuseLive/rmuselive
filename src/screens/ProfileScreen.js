@@ -2,15 +2,14 @@ import React, { Component } from "react";
 // import { connect } from "react-redux";
 // import RegisterLoginModal from "./RegisterLoginModal";
 import { NavLink as Link } from "react-router-dom";
-import ReactFilestack from "filestack-react";
 import UserSetting from "./UserSettingScreen";
 
 import agent from "../agent";
 
 //filestack button moved from header
 class ProfileScreen extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
       following: null,
       userImages: null
@@ -18,31 +17,17 @@ class ProfileScreen extends Component {
   }
 
   componentWillMount() {
-    const thisPath = window.location.href.split("/");
-    const username = thisPath[thisPath.length - 1];
     this.state.token = window.localStorage.getItem("jwt");
-    console.log(username);
 
     agent.setToken(this.state.token);
     agent.requests
-      .get(`/user/${username}`)
+      .get(`/user/${this.props.match.params.username}`)
       .then(res => this.setState({following: res.following, userImages: res.images }))
       .catch(error => {
         console.log("PROFILE SCREEN FETCH ERROR", error);
       });
   }
 
-  handleFilestackSuccess = blob => {
-    for (var file of blob.filesUploaded) {
-      console.log(agent.token);
-      agent.setToken(window.localStorage.getItem("jwt"));
-      agent.requests
-        .post("/media", {uri: file.url, type: file.mimetype})
-        .catch(error => {
-          console.log(JSON.stringify(error))
-        })
-    }
-  };
 
   followbutton = () => {
     if (this.state.token) {
@@ -62,31 +47,18 @@ class ProfileScreen extends Component {
       <div>
         {userImages && (
           <div>
-            <text>User Page</text>
-            
+            <h1>{this.props.match.params.username}</h1>
 
             { this.followbutton() }
               {this.state.userImages.map(a => {
-
-
-              //once images are in the database, change the p tag to an img tag
-              //set the source to the image source given in the response (it will be something like a.imageUrl)
-              return (
-                <div>
-                  <img src={a.uri} />
-                </div>
-              );
+                return (
+                  <div>
+                    <img src={a.uri} />
+                  </div>
+                );
             })}
           </div>
         )}
-        <ReactFilestack
-          apikey={"Av2OyyRf4Q16K5npkOJpBz"}
-          buttonText="FileStack Open"
-          buttonClass="FileStack"
-
-          // options={options}
-          onSuccess={blob => this.handleFilestackSuccess(blob)}
-        />
       </div>
     );
   }
