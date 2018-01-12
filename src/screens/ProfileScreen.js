@@ -2,92 +2,89 @@ import React, { Component } from "react";
 // import { connect } from "react-redux";
 // import RegisterLoginModal from "./RegisterLoginModal";
 import { NavLink as Link } from "react-router-dom";
-import ReactFilestack from "filestack-react";
 import UserSetting from "./UserSettingScreen";
 
 import agent from "../agent";
 
 //filestack button moved from header
 class ProfileScreen extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
       following: null,
-      userImages: null
+      userImages: null,
+      currentUser: null,
+      validUser: null
     };
   }
 
   componentWillMount() {
-    const thisPath = window.location.href.split("/");
-    const username = thisPath[thisPath.length - 1];
     this.state.token = window.localStorage.getItem("jwt");
-    console.log(username);
+
+    if (this.state.token) {
+      this.state.currentUser = JSON.parse(window.localStorage.getItem("user"));
+    }
 
     agent.setToken(this.state.token);
     agent.requests
-      .get(`/user/${username}`)
-      .then(res => this.setState({following: res.following, userImages: res.images }))
+      .get(`/user/${this.props.match.params.username}`)
+      .then(res => this.setState({validUser: true, following: res.following, userImages: res.images }))
       .catch(error => {
         console.log("PROFILE SCREEN FETCH ERROR", error);
+        this.setState({validUser: false});
       });
   }
 
-  handleFilestackSuccess = blob => {
-    for (var file of blob.filesUploaded) {
-      console.log(agent.token);
-      agent.setToken(window.localStorage.getItem("jwt"));
-      agent.requests
-        .post("/media", {uri: file.url, type: file.mimetype})
-        .catch(error => {
-          console.log(JSON.stringify(error))
-        })
-    }
+  followUser = () => {
+    agent.setToken(this.state.token);
+    agent.requests
+      .post(`/user/${this.props.match.params.username}/follow`)
+      .then(res => window.location = `/${this.props.match.params.username}`);
   };
 
-  followbutton =() => {
-    if (this.state.token) {
+  unFollowUser = () => {
+    agent.setToken(this.state.token);
+    agent.requests
+      .delete(`/user/${this.props.match.params.username}/follow`)
+      .then(res => window.location = `/${this.props.match.params.username}`);
+  };
+
+  followbutton = () => {
+    if (this.props.match.params.username !== this.state.currentUser.username) {
       if (this.state.following) {
-        return <button>Unfollow</button>;
+        return <button onClick={this.unFollowUser}>Unfollow</button>;
       } else {
-        return <button>Follow</button>;
+        return <button onClick={this.followUser}>Follow</button>;
       }
     } else {
     }
   };
 
+  // TODO: Add context menu for remove
+  // TODO: Add context menu for reposition
   render() {
     const { userImages, userInfo } = this.state;
     console.log("PROFILE SCREEN STATE", userImages);
     return (
       <div>
+        {this.state.validUser && (
+          <h1>{this.props.match.params.username}</h1>
+        )}
         {userImages && (
           <div>
-            <text>User Page</text>
-            
-
-            { this.followbutton() }
-              {this.state.userImages.map(a => {
-
-
-              //once images are in the database, change the p tag to an img tag
-              //set the source to the image source given in the response (it will be something like a.imageUrl)
-              return (
-                <div>
-                  <h1>User Images will go here</h1>
-                  <img src={a.uri} />
-                </div>
-              );
-            })}
+          {this.followbutton()}
+          {this.state.userImages.map(a => {
+            return (
+              <div>
+                  <img src={a.uri}/>
+              </div>
+            );
+          })}
           </div>
         )}
-        <ReactFilestack
-          apikey={"Av2OyyRf4Q16K5npkOJpBz"}
-          buttonText="FileStack Open"
-          buttonClass="FileStack"
-
-          // options={options}
-          onSuccess={blob => this.handleFilestackSuccess(blob)}
-        />
+        {!this.state.validUser && (
+          <h1>{this.props.match.params.username} is not an artist at RMuse.Live</h1>
+        )}
       </div>
     );
   }
