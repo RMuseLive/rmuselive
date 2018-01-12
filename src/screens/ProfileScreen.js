@@ -60,6 +60,8 @@ class ProfileScreen extends Component {
     }
   };
 
+  // TODO: Add context menu for remove
+  // TODO: Add context menu for reposition
   render() {
     const { userImages, userInfo } = this.state;
     console.log("PROFILE SCREEN STATE", userImages);
@@ -74,7 +76,7 @@ class ProfileScreen extends Component {
           {this.state.userImages.map(a => {
             return (
               <div>
-                <img src={a.uri}/>
+                  <img src={a.uri}/>
               </div>
             );
           })}
