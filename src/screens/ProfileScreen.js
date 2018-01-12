@@ -44,7 +44,7 @@ class ProfileScreen extends Component {
     }
   };
 
-  followbutton =() => {
+  followbutton = () => {
     if (this.state.token) {
       if (this.state.following) {
         return <button>Unfollow</button>;
@@ -73,7 +73,6 @@ class ProfileScreen extends Component {
               //set the source to the image source given in the response (it will be something like a.imageUrl)
               return (
                 <div>
-                  <h1>User Images will go here</h1>
                   <img src={a.uri} />
                 </div>
               );

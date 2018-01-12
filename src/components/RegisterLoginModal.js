@@ -6,11 +6,10 @@ import {
   ModalBody,
   ModalFooter
 } from "react-modal-bootstrap";
-import button, { Tabs, Tab } from "react-bootstrap";
+import { NavLink as Link } from "react-router-dom";
+import { Nav, NavItem, Tabs, Tab, Grid, Row, Col } from "react-bootstrap";
 import React, { Component } from "react";
 import agent from "../agent";
-// import ProfileScreen from "./screens/ProfileScreen";
-//connecting to user agent to login, now user,
 
 class RegisterLoginModal extends React.Component {
   constructor(props) {
@@ -27,6 +26,7 @@ class RegisterLoginModal extends React.Component {
     this.ChangePassword = this.ChangePassword.bind(this);
     this.ChangeUserType = this.ChangeUserType.bind(this);
   }
+
   openModal = () => {
     this.setState({
       isOpen: true
@@ -81,7 +81,7 @@ class RegisterLoginModal extends React.Component {
     agent.Auth.login(email, password)
       .then(payload => {
         window.localStorage.setItem("jwt", payload.token);
-        window.location = `/ProfileScreen/${payload.user.username}`;
+        window.location = `/${payload.user.username}`;
       })
       .catch(err => {
         console.log("LOG IN ERROR TEST", err);
@@ -115,9 +115,11 @@ class RegisterLoginModal extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.openModal} style={{ height: 40, width: 150 }}>
-          Register/Log-in
-        </button>
+        <Nav pullRight>
+          <NavItem onClick={this.openModal} style={{ verticalAlign: "middle"}}>
+            Login/Sign Up
+          </NavItem>
+        </Nav>
         <Modal isOpen={this.state.isOpen} onRequestHide={this.hideModal}>
           <ModalHeader>
             <ModalClose onClick={this.hideModal} />
@@ -128,104 +130,130 @@ class RegisterLoginModal extends React.Component {
               <Tab
                 eventKey={1}
                 title="Login"
-                style={{ flexDirection: "column" }}
               >
-
-                <h1 className="display-4">Login</h1>
-
-                <div>
-                  <label htmlFor="Email">Email:</label>
-                  <input
-                    type="text"
-                    name="Email"
-                    onChange={event =>
-                      this.setState({ Email: event.target.value })
-                    }
-                  />
-                  {/* <input type="text" name="Email" onChange={this.ChangeEmail} /> */}
-                </div>
-                <div>
-                  <label htmlFor="Password">Password:</label>
-                  <input
-                    type="password"
-                    name="Password"
-                    onChange={this.ChangePassword}
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="btn btn-dark"
-                  onClick={event => this.LogIn(event)}
-                >
-                  Login
-                </button>
+                <Grid>
+                  <Row></Row>
+                  <Row>
+                    <Col md={2}>
+                      <label className="form" htmlFor="Email">Email:</label>
+                    </Col>
+                    <Col md={2}>
+                      <input
+                        type="text"
+                        name="Email"
+                        onChange={event =>
+                          this.setState({ Email: event.target.value })
+                        }
+                      />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={2}>
+                      <label className="form" htmlFor="Password">Password:</label>
+                    </Col>
+                    <Col md={2}>
+                      <input
+                        type="password"
+                        name="Password"
+                        onChange={this.ChangePassword}
+                      />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={6}>
+                      <button
+                        type="button"
+                        className="btn btn-dark"
+                        onClick={event => this.LogIn(event)}
+                      >
+                        Login
+                      </button>
+                    </Col>
+                  </Row>
+                </Grid>
               </Tab>
               <Tab
                 eventKey={2}
                 title="Sign Up"
-                style={{ flexDirection: "column" }}
               >
-
-                <h1 className="display-4">Sign Up</h1>
-
-                <div>
-                  <label htmlFor="Username">Username:</label>
-                  <input
-                    type="text"
-                    name="Username"
-                    onChange={event => this.ChangeUsername(event)}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="Firstname">First Name:</label>
-                  <input
-                    type="text"
-                    name="Firstname"
-                    onChange={event => this.ChangeFirstname(event)}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="Lastname">Last Name:</label>
-                  <input
-                    type="text"
-                    name="Lastname"
-                    onChange={event => this.ChangeLastname(event)}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="Email">Email:</label>
-                  <input type="text" name="Email" onChange={this.ChangeEmail} />
-                </div>
-                <div>
-                  <label htmlFor="Password">Password:</label>
-                  <input
-                    type="password"
-                    name="Password"
-                    onChange={event => this.ChangePassword(event)}
-                  />
-                </div>
-                <div>
-
-                      
-                  <label htmlFor="UserType">User Type</label>
-                  
-                </div>
-                {/* <a href="/"> */}
-                <div className="form-check">
-    <input type="checkbox" name="artist" onChange={event => this.ChangeUserType(event)}/>
-    <label className="form-check-label" for="exampleCheck1">Artist</label>
-  </div>
-
-                  <button
-                    type="submit"
-                    className="btn btn-dark"
-                    onClick={event => this.SignUp(event)}
-                  >
-                    SignUp
-                  </button>
-
-                {/* </a> */}
-
+                <Grid>
+                  <Row></Row>
+                  <Row>
+                    <Col md={2}>
+                      <label className="form" htmlFor="Username">Username:</label>
+                    </Col>
+                    <Col md={2}>
+                      <input
+                        type="text"
+                        name="Username"
+                        onChange={event => this.ChangeUsername(event)}
+                      />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={2}>
+                      <label className="form" htmlFor="Firstname">First Name:</label>
+                    </Col>
+                    <Col md={2}>
+                      <input
+                        type="text"
+                        name="Firstname"
+                        onChange={event => this.ChangeFirstname(event)}
+                      />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={2}>
+                      <label className="form" htmlFor="Lastname">Last Name:</label>
+                    </Col>
+                    <Col md={2}>
+                      <input
+                        type="text"
+                        name="Lastname"
+                        onChange={event => this.ChangeLastname(event)}
+                      />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={2}>
+                      <label className="form" htmlFor="Email">Email:</label>
+                    </Col>
+                    <Col md={2}>
+                      <input type="text" name="Email" onChange={this.ChangeEmail} />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={2}>
+                      <label className="form" htmlFor="Password">Password:</label>
+                    </Col>
+                    <Col md={2}>
+                      <input
+                        type="password"
+                        name="Password"
+                        onChange={event => this.ChangePassword(event)}
+                      />
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={2}>
+                      <label className="form" htmlFor="artist">I am an artist.</label>
+                    </Col>
+                    <Col md={2}>
+                      <input type="checkbox" name="artist" onChange={event => this.ChangeUserType(event)}/>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={6}>
+                      <button
+                        type="submit"
+                        className="btn btn-dark"
+                        onClick={event => this.SignUp(event)}
+                      >
+                        SignUp
+                      </button>
+                    </Col>
+                  </Row>
+                </Grid>
               </Tab>
             </Tabs>
           </ModalBody>
