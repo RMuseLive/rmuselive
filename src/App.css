@@ -18,6 +18,10 @@ p {
   margin-right: 0;
 }
 
+img.artwork {
+  max-width: 250px;
+}
+
 img.logo {
   height: 50%;
   width: 50%;

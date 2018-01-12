@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
-// import RegisterLoginModal from "./RegisterLoginModal";
-import { NavLink as Link } from "react-router-dom";
-import UserSetting from "./UserSettingScreen";
+import { Grid, Row, Col } from 'react-bootstrap';
 
 import agent from "../agent";
 
@@ -28,7 +25,10 @@ class ProfileScreen extends Component {
     agent.setToken(this.state.token);
     agent.requests
       .get(`/user/${this.props.match.params.username}`)
-      .then(res => this.setState({validUser: true, following: res.following, userImages: res.images }))
+      .then(res => this.setState({
+        validUser: true,
+        following: res.following,
+        userImages: res.images}))
       .catch(error => {
         console.log("PROFILE SCREEN FETCH ERROR", error);
         this.setState({validUser: false});
@@ -68,19 +68,38 @@ class ProfileScreen extends Component {
     return (
       <div>
         {this.state.validUser && (
-          <h1>{this.props.match.params.username}</h1>
-        )}
+          <h1>{this.state.currentUser.firstname} {this.state.currentUser.lastname}</h1>)}
+        {this.state.validUser && this.followbutton()}
         {userImages && (
-          <div>
-          {this.followbutton()}
-          {this.state.userImages.map(a => {
-            return (
-              <div>
-                  <img src={a.uri}/>
-              </div>
-            );
-          })}
-          </div>
+          <Grid>
+            <Row>
+              {this.state.userImages.slice(0,4).map(a => {
+                return (
+                  <Col lg={3}>
+                    <img src={a.uri} className="artwork"/>
+                  </Col>
+                );
+              })}
+            </Row>
+            <Row>
+              {this.state.userImages.slice(4,8).map(a => {
+                return (
+                  <Col lg={3}>
+                    <img src={a.uri} className="artwork"/>
+                  </Col>
+                );
+              })}
+            </Row>
+            <Row>
+              {this.state.userImages.slice(8,12).map(a => {
+                return (
+                  <Col lg={3} style={{maxWidth: "10vw"}}>
+                    <img src={a.uri} className="artwork"/>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Grid>
         )}
         {!this.state.validUser && (
           <h1>{this.props.match.params.username} is not an artist at RMuse.Live</h1>

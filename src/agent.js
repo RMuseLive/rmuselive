@@ -3,6 +3,7 @@ import _superagent from "superagent";
 
 const superagent = superagentPromise(_superagent, global.Promise);
 const API_ROOT = "https://rmuse.live/api/1";
+//const API_ROOT = "http://localhost:3000/api/1";
 
 let token = null;
 const tokenPlugin = req => {
