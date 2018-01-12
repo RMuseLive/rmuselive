@@ -50,9 +50,6 @@ class RegisterLoginModal extends React.Component {
     const artist = this.state.artist;
 
     agent.Auth.register(username, email, firstname, lastname, password, artist)
-      .then(payload => {
-        window.location = `/ProfileScreen/${payload.user.username}`;
-      })
       .then(
         payload => {
           window.localStorage.setItem("jwt", payload.token);
@@ -88,6 +85,8 @@ class RegisterLoginModal extends React.Component {
         window.localStorage.setItem("user", JSON.stringify(payload.user));
         if (payload.user.artist) {
           window.location = `/${payload.user.username}`;
+        } else {
+          window.location = '/';
         }
       })
       .catch(err => {

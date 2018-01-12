@@ -23,6 +23,7 @@ class LogoutButton extends Component {
 
   handleLogOut = () => {
     window.localStorage.setItem("jwt", "");
+    window.localStorage.setItem("user", "");
     window.location = "/";
   };
 

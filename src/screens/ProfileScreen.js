@@ -12,25 +12,32 @@ class ProfileScreen extends Component {
     super(props);
     this.state = {
       following: null,
-      userImages: null
+      userImages: null,
+      currentUser: null,
+      validUser: null
     };
   }
 
   componentWillMount() {
     this.state.token = window.localStorage.getItem("jwt");
 
+    if (this.state.token) {
+      this.state.currentUser = JSON.parse(window.localStorage.getItem("user"));
+    }
+
     agent.setToken(this.state.token);
     agent.requests
       .get(`/user/${this.props.match.params.username}`)
-      .then(res => this.setState({following: res.following, userImages: res.images }))
+      .then(res => this.setState({validUser: true, following: res.following, userImages: res.images }))
       .catch(error => {
         console.log("PROFILE SCREEN FETCH ERROR", error);
+        this.setState({validUser: false});
       });
   }
 
 
   followbutton = () => {
-    if (this.state.token) {
+    if (this.props.match.params.username !== this.state.currentUser.username) {
       if (this.state.following) {
         return <button>Unfollow</button>;
       } else {
@@ -45,19 +52,23 @@ class ProfileScreen extends Component {
     console.log("PROFILE SCREEN STATE", userImages);
     return (
       <div>
+        {this.state.validUser && (
+          <h1>{this.props.match.params.username}</h1>
+        )}
         {userImages && (
           <div>
-            <h1>{this.props.match.params.username}</h1>
-
-            { this.followbutton() }
-              {this.state.userImages.map(a => {
-                return (
-                  <div>
-                    <img src={a.uri} />
-                  </div>
-                );
-            })}
+          {this.followbutton()}
+          {this.state.userImages.map(a => {
+            return (
+              <div>
+                <img src={a.uri}/>
+              </div>
+            );
+          })}
           </div>
+        )}
+        {!this.state.validUser && (
+          <h1>{this.props.match.params.username} is not an artist at RMuse.Live</h1>
         )}
       </div>
     );
