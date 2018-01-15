@@ -3,11 +3,12 @@ import _superagent from "superagent";
 
 const superagent = superagentPromise(_superagent, global.Promise);
 const API_ROOT = "https://rmuse.live/api/1";
+//const API_ROOT = "http://localhost:3000/api/1";
 
 let token = null;
 const tokenPlugin = req => {
   if (token) {
-    req.set("Authorization", `Token ${token}`);
+    req.set("Authorization", token);
   }
 };
 
@@ -28,7 +29,7 @@ const requests = {
       .post(`${API_ROOT}${url}`, body)
       .use(tokenPlugin)
       .then(responseBody),
-  del: url =>
+  delete: url =>
     superagent
       .del(`${API_ROOT}${url}`)
       .use(tokenPlugin)

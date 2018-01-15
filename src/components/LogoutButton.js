@@ -1,19 +1,47 @@
 import React, { Component, PropTypes } from "react";
-import agent from "../agent";
-//i believe tis must connect to agent because agent has token
+import {Nav, NavDropdown, MenuItem } from "react-bootstrap";
+import ReactFilestack from "filestack-react";
+
+import agent from "../agent"
 
 class LogoutButton extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleFilestackSuccess = blob => {
+    for (var file of blob.filesUploaded) {
+      console.log(agent.token);
+      agent.setToken(window.localStorage.getItem("jwt"));
+      agent.requests
+        .post("/media", {uri: file.url, type: file.mimetype})
+        .catch(error => {
+          console.log(JSON.stringify(error))
+        })
+    }
+  };
+
   handleLogOut = () => {
     window.localStorage.setItem("jwt", "");
+    window.localStorage.setItem("user", "");
     window.location = "/";
   };
 
   render() {
     return (
-      <button onClick={() => this.handleLogOut()}>Log Out</button>
-      // <h1 className="loading-text">
-      //   Logging out...
-      // </h1>
+      <Nav pullRight>
+        <NavDropdown title={this.props.user.username}>
+          <MenuItem onClick={() => this.handleLogOut()}>Log Out</MenuItem>
+          {this.props.user.artist && (
+            <ReactFilestack
+              apikey={"Av2OyyRf4Q16K5npkOJpBz"}
+              buttonText="Upload Files"
+              buttonClass="FileStack"
+              onSuccess={blob => this.handleFilestackSuccess(blob)}
+            />
+          )}
+        </NavDropdown>
+      </Nav>
     );
   }
 }

@@ -2,7 +2,7 @@
   background-color: rgba(109, 209, 235, 0.5);
   height: 150px;
   padding: 20px;
- 
+
 }
 .App-footer {
   background-color: rgba(243, 240, 240, 0.671);
@@ -18,13 +18,26 @@ p {
   margin-right: 0;
 }
 
+img.artwork {
+  max-width: 250px;
+}
+
+img.logo {
+  height: 50%;
+  width: 50%;
+}
+
+label.form {
+  text-align: right;
+}
 
 body {
- 
+  background-color: #f9fafa;
   text-align: center;
   color: rgb(29, 27, 27);
   padding-top: 10em;
 }
+
 .search {
   position: relative;
   left: 150px;
@@ -55,15 +68,11 @@ body {
 .About {
   text-align: center;
 }
-body{
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7d1x_RMdxhuhkPPl1xNT8WVt2dCldR2SjnBmbbE6KBPt_yQCN); 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
- }
- .Back {
+
+.Back {
   text-align: left;
 }
+
 .form-group {
   margin-left: 20em;
   margin-right: 20em;
